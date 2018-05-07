@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QL_HocVien
 {
-    public partial class FormCommon : FormCommonBase
+    public partial class FormCommonBase : Form
     {
-        public FormCommon()
+        public FormCommonBase()
         {
             InitializeComponent();
         }

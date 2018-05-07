@@ -57,8 +57,20 @@
     <Compile Include="FormCommon.Designer.cs">
       <DependentUpon>FormCommon.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCommonBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommonBase.Designer.cs">
+      <DependentUpon>FormCommonBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_COMMON_CONTROL\CommonHeaderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_COMMON_CONTROL\CommonHeaderControl.Designer.cs">
+      <DependentUpon>CommonHeaderControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="_QUANLY\frmQuanLyThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +101,9 @@
     <EmbeddedResource Include="FormCommon.resx">
       <DependentUpon>FormCommon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCommonBase.resx">
+      <DependentUpon>FormCommonBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,6 +113,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="_COMMON_CONTROL\CommonHeaderControl.resx">
+      <DependentUpon>CommonHeaderControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_QUANLY\frmQuanLyThongTin.resx">
       <DependentUpon>frmQuanLyThongTin.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,9 +141,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="_COMMON_CONTROL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{c3c0b1bb-2cc2-41d3-a0bb-f355435e28f2}</Project>

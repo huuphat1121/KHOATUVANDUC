@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QL_HocVien._SYSTEM
 {
-    public partial class frmInThe : Form
+    public partial class frmInThe : FormCommonBase
     {
         public frmInThe()
         {

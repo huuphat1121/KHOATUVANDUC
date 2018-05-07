@@ -1,6 +1,6 @@
 ﻿namespace QL_HocVien
 {
-    partial class FormCommon
+    partial class FormCommonBase
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.commonHeaderControl1 = new QL_HocVien._COMMON_CONTROL.CommonHeaderControl();
             this.SuspendLayout();
             // 
-            // FormCommon
+            // commonHeaderControl1
+            // 
+            this.commonHeaderControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.commonHeaderControl1.Location = new System.Drawing.Point(0, 0);
+            this.commonHeaderControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.commonHeaderControl1.Name = "commonHeaderControl1";
+            this.commonHeaderControl1.Size = new System.Drawing.Size(567, 210);
+            this.commonHeaderControl1.TabIndex = 99;
+            // 
+            // FormCommonBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 447);
-            this.Name = "FormCommon";
-            this.Text = "FormCommon";
+            this.ClientSize = new System.Drawing.Size(567, 321);
+            this.Controls.Add(this.commonHeaderControl1);
+            this.Name = "FormCommonBase";
+            this.Text = "FormCommonBase";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private _COMMON_CONTROL.CommonHeaderControl commonHeaderControl1;
     }
 }
