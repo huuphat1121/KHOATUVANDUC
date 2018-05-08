@@ -16,5 +16,19 @@ namespace QL_HocVien
         {
             InitializeComponent();
         }
+
+        private void FormCommon_Load(object sender, EventArgs e)
+        {
+            this.lblTitle.Text = this.Text;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Thoát chương trình?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

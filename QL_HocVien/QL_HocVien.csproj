@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCommon.cs">
       <SubType>Form</SubType>
@@ -70,6 +70,18 @@
     </Compile>
     <Compile Include="_COMMON_CONTROL\CommonHeaderControl.Designer.cs">
       <DependentUpon>CommonHeaderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANLY\frmQLCaNiemPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_QUANLY\frmQLCaNiemPhat.Designer.cs">
+      <DependentUpon>frmQLCaNiemPhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_QUANLY\frmQLViTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_QUANLY\frmQLViTri.Designer.cs">
+      <DependentUpon>frmQLViTri.cs</DependentUpon>
     </Compile>
     <Compile Include="_QUANLY\frmQuanLyThongTin.cs">
       <SubType>Form</SubType>
@@ -95,8 +107,8 @@
     <Compile Include="_SYSTEM\frmXemThongTin.Designer.cs">
       <DependentUpon>frmXemThongTin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCommon.resx">
       <DependentUpon>FormCommon.cs</DependentUpon>

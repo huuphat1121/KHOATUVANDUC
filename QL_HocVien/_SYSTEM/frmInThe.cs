@@ -28,14 +28,14 @@ namespace QL_HocVien._SYSTEM
             Graphics g = Graphics.FromImage(result);
             rect.Size = ctrlSize;
             g.DrawImage(bitmap, rect);
-            picResult.Image = result;
+            //picResult.Image = result;
             System.Drawing.Imaging.ImageFormat format = System.Drawing.Imaging.ImageFormat.Png;
-            picResult.Image.Save("D://test_image.png",format);
+            //picResult.Image.Save("D://test_image.png",format);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ControlToBitmap(panel1);
+            //ControlToBitmap(panel1);
         }
     }
 }

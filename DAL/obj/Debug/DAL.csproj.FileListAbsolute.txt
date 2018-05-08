@@ -2,3 +2,10 @@ U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\DAL\bin\Debug\DAL.dll
 U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\DAL\bin\Debug\DAL.pdb
 U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\DAL\obj\Debug\DAL.dll
 U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\DAL\obj\Debug\DAL.pdb
+D:\QLKT\KHOATUVANDUC\DAL\bin\Debug\DAL.dll
+D:\QLKT\KHOATUVANDUC\DAL\bin\Debug\DAL.pdb
+D:\QLKT\KHOATUVANDUC\DAL\bin\Debug\log4net.dll
+D:\QLKT\KHOATUVANDUC\DAL\bin\Debug\npgsql.dll
+D:\QLKT\KHOATUVANDUC\DAL\obj\Debug\DAL.dll
+D:\QLKT\KHOATUVANDUC\DAL\obj\Debug\DAL.pdb
+D:\QLKT\KHOATUVANDUC\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

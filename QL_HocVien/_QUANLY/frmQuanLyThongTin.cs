@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QL_HocVien._QUANLY
 {
-    public partial class frmQuanLyThongTin : Form
+    public partial class frmQuanLyThongTin : FormCommon
     {
         public frmQuanLyThongTin()
         {
