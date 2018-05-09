@@ -13,3 +13,4 @@ D:\QLKT\KHOATUVANDUC\BLL\bin\Debug\DAL.pdb
 D:\QLKT\KHOATUVANDUC\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\QLKT\KHOATUVANDUC\BLL\obj\Debug\BLL.dll
 D:\QLKT\KHOATUVANDUC\BLL\obj\Debug\BLL.pdb
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\bin\Debug\Npgsql.dll

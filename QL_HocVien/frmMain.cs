@@ -50,7 +50,7 @@ namespace QL_HocVien
 
         private void btnInThe_Click(object sender, EventArgs e)
         {
-            _SYSTEM.frmInThe finthe = new _SYSTEM.frmInThe();
+            _SYSTEM.InThe_ finthe = new _SYSTEM.InThe_();
             finthe.Show();
         }
 

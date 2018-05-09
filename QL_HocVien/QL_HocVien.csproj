@@ -119,6 +119,12 @@
     <Compile Include="_SYSTEM\frmXemThongTin.Designer.cs">
       <DependentUpon>frmXemThongTin.cs</DependentUpon>
     </Compile>
+    <Compile Include="_SYSTEM\InThe_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_SYSTEM\InThe_.Designer.cs">
+      <DependentUpon>InThe_.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_SYSTEM\frmXemThongTin.resx">
       <DependentUpon>frmXemThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_SYSTEM\InThe_.resx">
+      <DependentUpon>InThe_.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

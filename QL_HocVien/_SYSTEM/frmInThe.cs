@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace QL_HocVien._SYSTEM
 {
-    public partial class frmInThe : FormCommonBase
+    public partial class frmInThe : Form
     {
         public frmInThe()
         {
             InitializeComponent();
+
+            //panel1.Site = System.Drawing.Size(1482, 1055);
         }
 
 
@@ -29,13 +31,18 @@ namespace QL_HocVien._SYSTEM
             rect.Size = ctrlSize;
             g.DrawImage(bitmap, rect);
             //picResult.Image = result;
-            System.Drawing.Imaging.ImageFormat format = System.Drawing.Imaging.ImageFormat.Png;
+            System.Drawing.Imaging.ImageFormat format = System.Drawing.Imaging.ImageFormat.Jpeg;
             //picResult.Image.Save("D://test_image.png",format);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //ControlToBitmap(panel1);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ControlToBitmap(panel1);
         }
     }
 }

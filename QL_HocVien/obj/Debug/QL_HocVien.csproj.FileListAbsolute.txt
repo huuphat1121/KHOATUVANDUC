@@ -40,3 +40,10 @@ D:\QLKT\KHOATUVANDUC\QL_HocVien\bin\Debug\DAL.pdb
 D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._ADD.frmAdd_HocVien.resources
 D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._EDIT.frmEditHocVien.resources
 D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._QUANLY.frmQLViTri.resources
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\bin\Debug\DAL.dll
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\bin\Debug\Npgsql.dll
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\bin\Debug\DAL.pdb
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._ADD.frmAdd_HocVien.resources
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._EDIT.frmEditHocVien.resources
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._QUANLY.frmQLViTri.resources
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._SYSTEM.InThe_.resources
