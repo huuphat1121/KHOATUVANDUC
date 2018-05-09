@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnQLCaNiem = new System.Windows.Forms.Button();
             this.btnQLViTri = new System.Windows.Forms.Button();
             this.btnQLThongTin = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -37,7 +39,6 @@
             this.btnXemThongTin = new System.Windows.Forms.Button();
             this.btnKiemTraThe = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnQLCaNiem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -45,6 +46,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -56,6 +58,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MENU";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(203, 364);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 29);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Thoát";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
@@ -71,6 +86,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Quản Lý";
             // 
+            // btnQLCaNiem
+            // 
+            this.btnQLCaNiem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnQLCaNiem.AutoSize = true;
+            this.btnQLCaNiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLCaNiem.Location = new System.Drawing.Point(22, 132);
+            this.btnQLCaNiem.Name = "btnQLCaNiem";
+            this.btnQLCaNiem.Size = new System.Drawing.Size(225, 30);
+            this.btnQLCaNiem.TabIndex = 5;
+            this.btnQLCaNiem.Text = "Quản Lý Ca Niệm Phật";
+            this.btnQLCaNiem.UseVisualStyleBackColor = true;
+            this.btnQLCaNiem.Click += new System.EventHandler(this.btnQLCaNiem_Click);
+            // 
             // btnQLViTri
             // 
             this.btnQLViTri.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -79,7 +107,7 @@
             this.btnQLViTri.Location = new System.Drawing.Point(22, 80);
             this.btnQLViTri.Name = "btnQLViTri";
             this.btnQLViTri.Size = new System.Drawing.Size(225, 30);
-            this.btnQLViTri.TabIndex = 0;
+            this.btnQLViTri.TabIndex = 4;
             this.btnQLViTri.Text = "Quản Lý Vị Trí Ngủ";
             this.btnQLViTri.UseVisualStyleBackColor = true;
             this.btnQLViTri.Click += new System.EventHandler(this.btnQLViTri_Click);
@@ -92,7 +120,7 @@
             this.btnQLThongTin.Location = new System.Drawing.Point(22, 30);
             this.btnQLThongTin.Name = "btnQLThongTin";
             this.btnQLThongTin.Size = new System.Drawing.Size(225, 30);
-            this.btnQLThongTin.TabIndex = 0;
+            this.btnQLThongTin.TabIndex = 3;
             this.btnQLThongTin.Text = "Quản Lý Thông Tin Học Viên";
             this.btnQLThongTin.UseVisualStyleBackColor = true;
             this.btnQLThongTin.Click += new System.EventHandler(this.btnQLThongTin_Click);
@@ -120,7 +148,7 @@
             this.btnInThe.Location = new System.Drawing.Point(29, 122);
             this.btnInThe.Name = "btnInThe";
             this.btnInThe.Size = new System.Drawing.Size(202, 30);
-            this.btnInThe.TabIndex = 0;
+            this.btnInThe.TabIndex = 2;
             this.btnInThe.Text = "In Thẻ Học Viên";
             this.btnInThe.UseVisualStyleBackColor = true;
             this.btnInThe.Click += new System.EventHandler(this.btnInThe_Click);
@@ -134,7 +162,7 @@
             this.btnXemThongTin.Location = new System.Drawing.Point(29, 78);
             this.btnXemThongTin.Name = "btnXemThongTin";
             this.btnXemThongTin.Size = new System.Drawing.Size(202, 30);
-            this.btnXemThongTin.TabIndex = 0;
+            this.btnXemThongTin.TabIndex = 1;
             this.btnXemThongTin.Text = "Xem Thông Tin Học Viên";
             this.btnXemThongTin.UseVisualStyleBackColor = true;
             this.btnXemThongTin.Click += new System.EventHandler(this.btnXemThongTin_Click);
@@ -166,19 +194,6 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnQLCaNiem
-            // 
-            this.btnQLCaNiem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnQLCaNiem.AutoSize = true;
-            this.btnQLCaNiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLCaNiem.Location = new System.Drawing.Point(22, 132);
-            this.btnQLCaNiem.Name = "btnQLCaNiem";
-            this.btnQLCaNiem.Size = new System.Drawing.Size(225, 30);
-            this.btnQLCaNiem.TabIndex = 0;
-            this.btnQLCaNiem.Text = "Quản Lý Ca Niệm Phật";
-            this.btnQLCaNiem.UseVisualStyleBackColor = true;
-            this.btnQLCaNiem.Click += new System.EventHandler(this.btnQLCaNiem_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +204,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khóa Tu Chùa Vạn Đức";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -208,6 +224,7 @@
         private System.Windows.Forms.Button btnInThe;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnQLCaNiem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

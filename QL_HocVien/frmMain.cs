@@ -70,5 +70,10 @@ namespace QL_HocVien
             _QUANLY.frmQLCaNiemPhat fQlCa = new _QUANLY.frmQLCaNiemPhat();
             fQlCa.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

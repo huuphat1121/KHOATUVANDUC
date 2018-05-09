@@ -85,32 +85,47 @@ namespace QL_HocVien._SYSTEM
 
         private void txtPhapdanh_KeyDown(object sender, KeyEventArgs e)
         {
-            btnPhapdanh.PerformClick();
+            if(e.KeyCode==Keys.Enter)
+                btnPhapdanh.PerformClick();
         }
 
         private void txtThedanh_KeyDown(object sender, KeyEventArgs e)
         {
-            btnThedanh.PerformClick();
+            if (e.KeyCode == Keys.Enter)
+                btnThedanh.PerformClick();
         }
 
         private void txtCMND_KeyDown(object sender, KeyEventArgs e)
         {
-            btnCMND.PerformClick();
+            if (e.KeyCode == Keys.Enter)
+                btnCMND.PerformClick();
         }
 
         private void cbbKhu_KeyDown(object sender, KeyEventArgs e)
         {
-            btnKhu.PerformClick();
+            if (e.KeyCode == Keys.Enter)
+                btnKhu.PerformClick();
         }
 
         private void cbbCaNiem_KeyDown(object sender, KeyEventArgs e)
         {
-            btnCaNiem.PerformClick();
+            if (e.KeyCode == Keys.Enter)
+                btnCaNiem.PerformClick();
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXemTatCa_Click(object sender, EventArgs e)
+        {
+            initForm();
         }
     }
 }

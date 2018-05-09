@@ -65,11 +65,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_ADD\frmAdd_HocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_ADD\frmAdd_HocVien.Designer.cs">
+      <DependentUpon>frmAdd_HocVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="_COMMON_CONTROL\CommonHeaderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="_COMMON_CONTROL\CommonHeaderControl.Designer.cs">
       <DependentUpon>CommonHeaderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_EDIT\frmEditHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_EDIT\frmEditHocVien.Designer.cs">
+      <DependentUpon>frmEditHocVien.cs</DependentUpon>
     </Compile>
     <Compile Include="_QUANLY\frmQLCaNiemPhat.cs">
       <SubType>Form</SubType>
@@ -125,8 +137,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="_ADD\frmAdd_HocVien.resx">
+      <DependentUpon>frmAdd_HocVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_COMMON_CONTROL\CommonHeaderControl.resx">
       <DependentUpon>CommonHeaderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_EDIT\frmEditHocVien.resx">
+      <DependentUpon>frmEditHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_QUANLY\frmQLViTri.resx">
+      <DependentUpon>frmQLViTri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_QUANLY\frmQuanLyThongTin.resx">
       <DependentUpon>frmQuanLyThongTin.cs</DependentUpon>

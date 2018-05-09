@@ -37,3 +37,6 @@ D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien.csproj.GenerateResource.Cac
 D:\QLKT\KHOATUVANDUC\QL_HocVien\bin\Debug\DAL.dll
 D:\QLKT\KHOATUVANDUC\QL_HocVien\bin\Debug\Npgsql.dll
 D:\QLKT\KHOATUVANDUC\QL_HocVien\bin\Debug\DAL.pdb
+D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._ADD.frmAdd_HocVien.resources
+D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._EDIT.frmEditHocVien.resources
+D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._QUANLY.frmQLViTri.resources

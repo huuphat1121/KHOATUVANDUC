@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="bll_hocvien_infomation.cs" />
     <Compile Include="bll_search_hocvien.cs" />
+    <Compile Include="bll_vitri.cs" />
     <Compile Include="BOT\bot_hocvien_infomation.cs" />
     <Compile Include="BOT\bot_vitri_khu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
