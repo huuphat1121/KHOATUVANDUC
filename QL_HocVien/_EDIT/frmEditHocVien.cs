@@ -26,10 +26,11 @@ namespace QL_HocVien._EDIT
         private void initForm()
         {
             txtSTT.Select();
+
             cbbKhu.DisplayMember = "khu_id";
             cbbKhu.DataSource = _bll_hv.loadCbbKhu();
-            cbbCaNiemPhat.DisplayMember = "ca_niem";
             cbbCaNiemPhat.DataSource = _bll_hv.loadCbbCaNiem();
+            cbbCaNiemPhat.DisplayMember = "ca_niem";
 
             txtCMND.Text = _QUANLY.frmQuanLyThongTin.cmnd_;
             txtDiaChi.Text = _QUANLY.frmQuanLyThongTin.diachi_;
@@ -48,6 +49,17 @@ namespace QL_HocVien._EDIT
             dtpNgayDi.Value = _QUANLY.frmQuanLyThongTin.ngaydi_;
             oldVitri = cbbViTri.Text;
 
+        }
+
+        private void reloadInitForm()
+        {
+            txtSTT.Select();
+            cbbKhu.DisplayMember = "khu_id";
+            cbbKhu.DataSource = _bll_hv.loadCbbKhu();
+            
+            cbbCaNiemPhat.DataSource = _bll_hv.loadCbbCaNiem();
+            cbbCaNiemPhat.DisplayMember = "ca_niem";
+            oldVitri = cbbViTri.Text;
         }
 
         private bool isEmpty(string _text)
@@ -83,8 +95,19 @@ namespace QL_HocVien._EDIT
                         _bot_hv.ngayve = dtpNgayDi.Value;
                         DateTime.Parse(_bot_hv.ngayve.ToString()).ToShortDateString();
                         _bot_hv.ghichu = txtGhiChu.Text;
-                        MessageBox.Show(_bll_hv.UpdateHocVien(_bot_hv,oldVitri), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        initForm();
+                    DialogResult dr = new DialogResult();
+                    dr = MessageBox.Show("Nhấn Yes để thực hiện lưu tất cả thông tin, Nhấn No nếu không muốn lưu thông tin Khu và Vị trí, Nhấn Cancel để hủy bỏ!", "Xác nhận", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        MessageBox.Show(_bll_hv.UpdateHocVienAll(_bot_hv, oldVitri), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        reloadInitForm();
+                    }
+                    else if (dr == DialogResult.No)
+                    {
+                        MessageBox.Show(_bll_hv.UpdateHocVien_(_bot_hv, oldVitri), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        reloadInitForm();
+                    }
+                        
                 }
                 catch (Exception ex)
                 {

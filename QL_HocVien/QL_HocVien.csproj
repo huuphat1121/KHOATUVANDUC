@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="KeepAutomation.Barcode.Windows">
+      <HintPath>..\References\KA.Barcode.for.WindowsForms\KeepAutomation.Barcode.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExportExcel.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +80,12 @@
     </Compile>
     <Compile Include="_COMMON_CONTROL\CommonHeaderControl.Designer.cs">
       <DependentUpon>CommonHeaderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_COMMON_CONTROL\picResultCommon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_COMMON_CONTROL\picResultCommon.Designer.cs">
+      <DependentUpon>picResultCommon.cs</DependentUpon>
     </Compile>
     <Compile Include="_EDIT\frmEditHocVien.cs">
       <SubType>Form</SubType>
@@ -149,8 +159,14 @@
     <EmbeddedResource Include="_COMMON_CONTROL\CommonHeaderControl.resx">
       <DependentUpon>CommonHeaderControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_COMMON_CONTROL\picResultCommon.resx">
+      <DependentUpon>picResultCommon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_EDIT\frmEditHocVien.resx">
       <DependentUpon>frmEditHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_QUANLY\frmQLCaNiemPhat.resx">
+      <DependentUpon>frmQLCaNiemPhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_QUANLY\frmQLViTri.resx">
       <DependentUpon>frmQLViTri.cs</DependentUpon>
@@ -183,7 +199,35 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{c3c0b1bb-2cc2-41d3-a0bb-f355435e28f2}</Project>

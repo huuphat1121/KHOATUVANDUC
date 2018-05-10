@@ -58,13 +58,14 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 208);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(503, 126);
+            this.groupBox1.Size = new System.Drawing.Size(500, 126);
             this.groupBox1.TabIndex = 101;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
             // 
             // txtVitri
             // 
+            this.txtVitri.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVitri.Location = new System.Drawing.Point(61, 54);
             this.txtVitri.Name = "txtVitri";
             this.txtVitri.Size = new System.Drawing.Size(66, 23);
@@ -115,6 +116,7 @@
             // 
             // cbbKhu
             // 
+            this.cbbKhu.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbKhu.FormattingEnabled = true;
             this.cbbKhu.Location = new System.Drawing.Point(61, 25);
             this.cbbKhu.Name = "cbbKhu";
@@ -145,10 +147,10 @@
             this.khu_id,
             this.vitri,
             this.status});
-            this.dgvViTri.Location = new System.Drawing.Point(12, 340);
+            this.dgvViTri.Location = new System.Drawing.Point(12, 338);
             this.dgvViTri.Name = "dgvViTri";
             this.dgvViTri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvViTri.Size = new System.Drawing.Size(503, 212);
+            this.dgvViTri.Size = new System.Drawing.Size(500, 212);
             this.dgvViTri.TabIndex = 102;
             this.dgvViTri.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViTri_CellEndEdit);
             this.dgvViTri.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViTri_CellValueChanged);
@@ -179,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 564);
+            this.ClientSize = new System.Drawing.Size(524, 562);
             this.Controls.Add(this.dgvViTri);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;

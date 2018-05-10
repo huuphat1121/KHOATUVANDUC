@@ -26,6 +26,7 @@ namespace QL_HocVien._QUANLY
         {
             cbbKhu.DisplayMember = "khu_id";
             cbbKhu.DataSource = _bll_vt.loadCbbKhu();
+            btnThem.Enabled = false;
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
@@ -81,7 +82,6 @@ namespace QL_HocVien._QUANLY
                 _bot_vt.khu_id = dgvViTri.CurrentRow.Cells["khu_id"].Value.ToString();
                 _bot_vt.vitri = dgvViTri.CurrentRow.Cells["vitri"].Value.ToString();
                 MessageBox.Show(_bll_vt.DeleteViTri(_bot_vt), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                initForm();
             }
         }
 

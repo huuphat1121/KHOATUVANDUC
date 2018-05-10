@@ -47,3 +47,8 @@ U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._ADD.f
 U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._EDIT.frmEditHocVien.resources
 U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._QUANLY.frmQLViTri.resources
 U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._SYSTEM.InThe_.resources
+D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._SYSTEM.InThe_.resources
+D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._QUANLY.frmQLCaNiemPhat.resources
+D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien.csproj.ResolveComReference.cache
+D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._COMMON_CONTROL.picResultCommon.resources
+D:\QLKT\KHOATUVANDUC\QL_HocVien\bin\Debug\KeepAutomation.Barcode.Windows.dll

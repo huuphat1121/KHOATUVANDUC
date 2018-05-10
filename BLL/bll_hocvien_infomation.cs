@@ -41,9 +41,15 @@ namespace BLL
             bot_hv.caniemphat = dt.Rows[0][5].ToString();
         }
 
+
+        public DataTable loadInfoHocVien_PrintAll()
+        {
+            string sql_ = "select phapdanh, thedanh, namsinh, vitri, caniemphat,hocvien_id from hocvien_info ";
+            return cn.GetAllValue(sql_);
+        }
         public DataTable loadAllInfo_HocVien()
         {
-            string sql_ = "select * from hocvien_info";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info";
             return cn.GetAllValue(sql_);
         }
 
@@ -77,15 +83,27 @@ namespace BLL
             return "Thêm thông tin học viên thành công!";
         }
 
-        public string UpdateHocVien(bot_hocvien_infomation _bot_hv, string oldViTri)
+        public string UpdateHocVienAll(bot_hocvien_infomation _bot_hv, string oldViTri)
         {
-            string sql_ = "update hocvien_info set where hocvien_id='"+_bot_hv.hocvien_id+"'";
+            string sql_ = "update hocvien_info set phapdanh='"+_bot_hv.phapdanh+ "',thedanh='" + _bot_hv.thedanh + "',phone='" + _bot_hv.phone + "',nguoithan_phone='" + _bot_hv.nguoithan_phone + "',cmnd='" + _bot_hv.cmnd + "',cmnd_note='" + _bot_hv.cmnd_note + "',hocvien_diachi='" + _bot_hv.hocvien_diachi + "',namsinh='" + _bot_hv.namsinh + "',vitri='" + _bot_hv.vitri + "',ngayden='" + _bot_hv.ngayden + "',ngayve='" + _bot_hv.ngayve + "',ghichu='" + _bot_hv.ghichu + "',caniemphat='" + _bot_hv.caniemphat + "', khu_id='"+_bot_hv.khu_id+"'where hocvien_id='" + _bot_hv.hocvien_id+"'";
             cn.Update(sql_);
             sql_ = "update vitri_khu set status=true where vitri='" + oldViTri + "'";
             cn.Update(sql_);
             sql_ = "update vitri_khu set status=false where vitri='" + _bot_hv.vitri + "'";
             cn.Update(sql_);
             
+            return "Chỉnh sửa thông tin học viên thành công!";
+        }
+
+        public string UpdateHocVien_(bot_hocvien_infomation _bot_hv, string oldViTri)
+        {
+            string sql_ = "update hocvien_info set phapdanh='" + _bot_hv.phapdanh + "',thedanh='" + _bot_hv.thedanh + "',phone='" + _bot_hv.phone + "',nguoithan_phone='" + _bot_hv.nguoithan_phone + "',cmnd='" + _bot_hv.cmnd + "',cmnd_note='" + _bot_hv.cmnd_note + "',hocvien_diachi='" + _bot_hv.hocvien_diachi + "',namsinh='" + _bot_hv.namsinh + "',ngayden='" + _bot_hv.ngayden + "',ngayve='" + _bot_hv.ngayve + "',ghichu='" + _bot_hv.ghichu + "',caniemphat='" + _bot_hv.caniemphat + "'where hocvien_id='" + _bot_hv.hocvien_id + "'";
+            cn.Update(sql_);
+            sql_ = "update vitri_khu set status=true where vitri='" + oldViTri + "'";
+            cn.Update(sql_);
+            sql_ = "update vitri_khu set status=false where vitri='" + _bot_hv.vitri + "'";
+            cn.Update(sql_);
+
             return "Chỉnh sửa thông tin học viên thành công!";
         }
 

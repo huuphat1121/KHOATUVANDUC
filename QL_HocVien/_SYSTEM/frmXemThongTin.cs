@@ -120,6 +120,10 @@ namespace QL_HocVien._SYSTEM
 
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
+            ExportExcel excel = new ExportExcel();
+            // Lấy về nguồn dữ liệu cần Export là 1 DataTable
+            DataTable dt = bll_hhv.loadAllInfo_HocVien();
+            excel.Export(dt, "Danh sach tham gia khoa tu", "DANH SÁCH THAM GIA KHÓA TU VẠN ĐỨC TỰ");
 
         }
 
@@ -127,5 +131,9 @@ namespace QL_HocVien._SYSTEM
         {
             initForm();
         }
+
+
+        
+
     }
 }
