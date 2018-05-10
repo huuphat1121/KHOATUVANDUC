@@ -42,7 +42,7 @@ namespace QL_HocVien._SYSTEM
             rect.Size = ctrlSize;
             g.DrawImage(bitmap, rect);
             pictureBox1.Image = result;
-            System.Drawing.Imaging.ImageFormat format = System.Drawing.Imaging.ImageFormat.Jpeg;
+            System.Drawing.Imaging.ImageFormat format = System.Drawing.Imaging.ImageFormat.Png;
             pictureBox1.Image.Save(fileName, format);
         }
         private void button1_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace QL_HocVien._SYSTEM
             {
                 Directory.CreateDirectory("D://The Chua Van Duc");
             }
-            string fileName= "D://The Chua Van Duc/"+txtSTT.Text + ".jpg";
+            string fileName= "D://The Chua Van Duc/"+txtSTT.Text + ".png";
             if (File.Exists(fileName))
             {
                 File.Delete(fileName);
