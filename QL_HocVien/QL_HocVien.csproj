@@ -87,6 +87,12 @@
     <Compile Include="_COMMON_CONTROL\picResultCommon.Designer.cs">
       <DependentUpon>picResultCommon.cs</DependentUpon>
     </Compile>
+    <Compile Include="_EDIT\frmEditCaNiemPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_EDIT\frmEditCaNiemPhat.Designer.cs">
+      <DependentUpon>frmEditCaNiemPhat.cs</DependentUpon>
+    </Compile>
     <Compile Include="_EDIT\frmEditHocVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_COMMON_CONTROL\picResultCommon.resx">
       <DependentUpon>picResultCommon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_EDIT\frmEditCaNiemPhat.resx">
+      <DependentUpon>frmEditCaNiemPhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_EDIT\frmEditHocVien.resx">
       <DependentUpon>frmEditHocVien.cs</DependentUpon>

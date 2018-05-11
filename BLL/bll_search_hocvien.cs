@@ -54,5 +54,11 @@ namespace BLL
             return cn.GetAllValue(sql_);
         }
 
+        public DataTable searchSTT(int stt_)
+        {
+            string sql_ = "select * from hocvien_info where hocvien_id='" + stt_ + "'";
+            return cn.GetAllValue(sql_);
+        }
+
     }
 }

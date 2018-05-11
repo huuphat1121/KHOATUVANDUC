@@ -61,6 +61,7 @@
             this.dgvCaNiemPhat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCaNiemPhat.Size = new System.Drawing.Size(245, 157);
             this.dgvCaNiemPhat.TabIndex = 104;
+            this.dgvCaNiemPhat.DoubleClick += new System.EventHandler(this.dgvCaNiemPhat_DoubleClick);
             // 
             // ca_id
             // 
@@ -107,7 +108,7 @@
             this.txtCaNiemPhat.Location = new System.Drawing.Point(111, 25);
             this.txtCaNiemPhat.Name = "txtCaNiemPhat";
             this.txtCaNiemPhat.Size = new System.Drawing.Size(111, 23);
-            this.txtCaNiemPhat.TabIndex = 3;
+            this.txtCaNiemPhat.TabIndex = 0;
             this.txtCaNiemPhat.TextChanged += new System.EventHandler(this.txtCaNiemPhat_TextChanged);
             // 
             // btnQuayLai
@@ -116,7 +117,7 @@
             this.btnQuayLai.Location = new System.Drawing.Point(167, 132);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(75, 28);
-            this.btnQuayLai.TabIndex = 2;
+            this.btnQuayLai.TabIndex = 3;
             this.btnQuayLai.Text = "Quay Lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
@@ -138,7 +139,7 @@
             this.btnThem.Location = new System.Drawing.Point(5, 132);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 28);
-            this.btnThem.TabIndex = 2;
+            this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);

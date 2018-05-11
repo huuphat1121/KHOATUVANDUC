@@ -34,9 +34,12 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnCMND = new System.Windows.Forms.Button();
+            this.btnSTT = new System.Windows.Forms.Button();
             this.btnPhapDanh = new System.Windows.Forms.Button();
             this.txtCMND = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtSTT = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtPhapdanh = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvHocVien = new System.Windows.Forms.DataGridView();
@@ -68,9 +71,12 @@
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.btnCMND);
+            this.groupBox1.Controls.Add(this.btnSTT);
             this.groupBox1.Controls.Add(this.btnPhapDanh);
             this.groupBox1.Controls.Add(this.txtCMND);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtSTT);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtPhapdanh);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,7 +94,7 @@
             this.btnQuayLai.Location = new System.Drawing.Point(318, 87);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(75, 26);
-            this.btnQuayLai.TabIndex = 6;
+            this.btnQuayLai.TabIndex = 9;
             this.btnQuayLai.Text = "Quay Lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
@@ -100,7 +106,7 @@
             this.btnXoa.Location = new System.Drawing.Point(215, 87);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 26);
-            this.btnXoa.TabIndex = 6;
+            this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -112,7 +118,7 @@
             this.btnSua.Location = new System.Drawing.Point(114, 87);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 26);
-            this.btnSua.TabIndex = 6;
+            this.btnSua.TabIndex = 7;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -135,18 +141,29 @@
             this.btnCMND.Location = new System.Drawing.Point(195, 54);
             this.btnCMND.Name = "btnCMND";
             this.btnCMND.Size = new System.Drawing.Size(58, 23);
-            this.btnCMND.TabIndex = 6;
+            this.btnCMND.TabIndex = 5;
             this.btnCMND.Text = "Lọc";
             this.btnCMND.UseVisualStyleBackColor = true;
             this.btnCMND.Click += new System.EventHandler(this.btnCMND_Click);
             // 
+            // btnSTT
+            // 
+            this.btnSTT.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSTT.Location = new System.Drawing.Point(195, 22);
+            this.btnSTT.Name = "btnSTT";
+            this.btnSTT.Size = new System.Drawing.Size(58, 23);
+            this.btnSTT.TabIndex = 1;
+            this.btnSTT.Text = "Lọc";
+            this.btnSTT.UseVisualStyleBackColor = true;
+            this.btnSTT.Click += new System.EventHandler(this.btnSTT_Click);
+            // 
             // btnPhapDanh
             // 
             this.btnPhapDanh.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhapDanh.Location = new System.Drawing.Point(195, 25);
+            this.btnPhapDanh.Location = new System.Drawing.Point(472, 22);
             this.btnPhapDanh.Name = "btnPhapDanh";
             this.btnPhapDanh.Size = new System.Drawing.Size(58, 23);
-            this.btnPhapDanh.TabIndex = 6;
+            this.btnPhapDanh.TabIndex = 3;
             this.btnPhapDanh.Text = "Lọc";
             this.btnPhapDanh.UseVisualStyleBackColor = true;
             this.btnPhapDanh.Click += new System.EventHandler(this.btnPhapDanh_Click);
@@ -157,7 +174,7 @@
             this.txtCMND.Location = new System.Drawing.Point(89, 54);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(100, 23);
-            this.txtCMND.TabIndex = 5;
+            this.txtCMND.TabIndex = 4;
             this.txtCMND.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCMND_KeyDown);
             // 
             // label3
@@ -169,19 +186,37 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "CMND:";
             // 
+            // txtSTT
+            // 
+            this.txtSTT.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTT.Location = new System.Drawing.Point(89, 22);
+            this.txtSTT.Name = "txtSTT";
+            this.txtSTT.Size = new System.Drawing.Size(100, 23);
+            this.txtSTT.TabIndex = 0;
+            this.txtSTT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSTT_KeyDown);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "STT:";
+            // 
             // txtPhapdanh
             // 
             this.txtPhapdanh.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhapdanh.Location = new System.Drawing.Point(89, 25);
+            this.txtPhapdanh.Location = new System.Drawing.Point(366, 22);
             this.txtPhapdanh.Name = "txtPhapdanh";
             this.txtPhapdanh.Size = new System.Drawing.Size(100, 23);
-            this.txtPhapdanh.TabIndex = 3;
+            this.txtPhapdanh.TabIndex = 2;
             this.txtPhapdanh.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPhapdanh_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 28);
+            this.label1.Location = new System.Drawing.Point(283, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 2;
@@ -237,7 +272,7 @@
             this.phapdanh.HeaderText = "Pháp danh";
             this.phapdanh.Name = "phapdanh";
             this.phapdanh.ReadOnly = true;
-            this.phapdanh.Width = 84;
+            this.phapdanh.Width = 78;
             // 
             // thedanh
             // 
@@ -245,7 +280,7 @@
             this.thedanh.HeaderText = "Thế danh";
             this.thedanh.Name = "thedanh";
             this.thedanh.ReadOnly = true;
-            this.thedanh.Width = 78;
+            this.thedanh.Width = 72;
             // 
             // phone
             // 
@@ -253,7 +288,7 @@
             this.phone.HeaderText = "Điện thoại";
             this.phone.Name = "phone";
             this.phone.ReadOnly = true;
-            this.phone.Width = 80;
+            this.phone.Width = 74;
             // 
             // nguoithan_phone
             // 
@@ -261,7 +296,7 @@
             this.nguoithan_phone.HeaderText = "ĐT Người thân";
             this.nguoithan_phone.Name = "nguoithan_phone";
             this.nguoithan_phone.ReadOnly = true;
-            this.nguoithan_phone.Width = 102;
+            this.nguoithan_phone.Width = 94;
             // 
             // cmnd
             // 
@@ -355,6 +390,7 @@
             this.Name = "frmQuanLyThongTin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Thông Tin Học Viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.dgvHocVien, 0);
             this.groupBox1.ResumeLayout(false);
@@ -393,5 +429,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayden;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayve;
         private System.Windows.Forms.DataGridViewTextBoxColumn ghichu;
+        private System.Windows.Forms.Button btnSTT;
+        private System.Windows.Forms.TextBox txtSTT;
+        private System.Windows.Forms.Label label2;
     }
 }

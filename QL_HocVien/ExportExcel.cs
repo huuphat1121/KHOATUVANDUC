@@ -105,7 +105,7 @@ namespace QL_HocVien
 
             cl9.Value2 = "Địa chỉ";
 
-            cl9.ColumnWidth = 30.0;
+            cl9.ColumnWidth = 45.0;
             Microsoft.Office.Interop.Excel.Range cl10 = oSheet.get_Range("J3", "J3");
 
             cl10.Value2 = "Khu";

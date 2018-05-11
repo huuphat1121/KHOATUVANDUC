@@ -22,7 +22,7 @@ namespace QL_HocVien._SYSTEM
 
         private void initForm()
         {
-            txtPhapdanh.Select();
+            txtSTT.Select();
             cbbKhu.DisplayMember = "khu_id";
             cbbKhu.DataSource = bll_hhv.loadCbbKhu();
             cbbCaNiem.DisplayMember = "ca_niem";
@@ -132,8 +132,16 @@ namespace QL_HocVien._SYSTEM
             initForm();
         }
 
+        private void txtSTT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSTT.PerformClick();
+        }
 
-        
-
+        private void btnSTT_Click(object sender, EventArgs e)
+        {
+            dgvHocVien.DataSource = bll_sear_hv.searchSTT(int.Parse(txtSTT.Text));
+            isDgvEmpty();
+        }
     }
 }

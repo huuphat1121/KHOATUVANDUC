@@ -33,6 +33,13 @@ namespace BLL
             return "Thêm Ca niệm phật thành công!";
         }
 
+        public string UpdateCaNiem(string text, int ca_id_)
+        {
+            string sql_ = "update ca_niem_phat set ca_niem='" + text + "' where ca_id='" + ca_id_ + "'";
+            cn.Update(sql_);
+            return "Chỉnh sửa ca niệm phật thành công!";
+        }
+
         public string DeleteCaNiem(bot_caniemphat _bot_ca)
         {
             string sql_ = "delete from ca_niem_phat where ca_niem'" + _bot_ca.ca_niem + "'";

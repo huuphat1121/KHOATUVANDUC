@@ -69,7 +69,7 @@
             this.txtVitri.Location = new System.Drawing.Point(61, 54);
             this.txtVitri.Name = "txtVitri";
             this.txtVitri.Size = new System.Drawing.Size(66, 23);
-            this.txtVitri.TabIndex = 3;
+            this.txtVitri.TabIndex = 1;
             this.txtVitri.TextChanged += new System.EventHandler(this.txtVitri_TextChanged);
             // 
             // btnQuayLai
@@ -78,7 +78,7 @@
             this.btnQuayLai.Location = new System.Drawing.Point(421, 92);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(75, 28);
-            this.btnQuayLai.TabIndex = 2;
+            this.btnQuayLai.TabIndex = 4;
             this.btnQuayLai.Text = "Quay Lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
@@ -89,7 +89,7 @@
             this.btnXoa.Location = new System.Drawing.Point(323, 92);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 28);
-            this.btnXoa.TabIndex = 2;
+            this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -121,7 +121,8 @@
             this.cbbKhu.Location = new System.Drawing.Point(61, 25);
             this.cbbKhu.Name = "cbbKhu";
             this.cbbKhu.Size = new System.Drawing.Size(66, 23);
-            this.cbbKhu.TabIndex = 1;
+            this.cbbKhu.Sorted = true;
+            this.cbbKhu.TabIndex = 0;
             this.cbbKhu.SelectedValueChanged += new System.EventHandler(this.cbbKhu_SelectedValueChanged);
             // 
             // label1

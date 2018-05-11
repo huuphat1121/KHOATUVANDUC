@@ -15,6 +15,8 @@ namespace QL_HocVien._QUANLY
     {
         bot_caniemphat _bot_ca = new bot_caniemphat();
         bll_caniemphat _bll_ca = new bll_caniemphat();
+        public static string caniemphat_;
+        public static int ca_id_;
         public frmQLCaNiemPhat()
         {
             InitializeComponent();
@@ -76,6 +78,15 @@ namespace QL_HocVien._QUANLY
                 MessageBox.Show(_bll_ca.DeleteCaNiem(_bot_ca), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 initForm();
             }
+        }
+
+        private void dgvCaNiemPhat_DoubleClick(object sender, EventArgs e)
+        {
+            ca_id_=int.Parse(dgvCaNiemPhat.CurrentRow.Cells["ca_id"].Value.ToString());
+            caniemphat_ = dgvCaNiemPhat.CurrentRow.Cells["ca_niem"].Value.ToString();
+            _EDIT.frmEditCaNiemPhat fEditCaniem = new _EDIT.frmEditCaNiemPhat();
+            fEditCaniem.ShowDialog();
+            initForm();
         }
     }
 }

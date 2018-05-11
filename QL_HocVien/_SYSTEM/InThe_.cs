@@ -18,11 +18,13 @@ namespace QL_HocVien._SYSTEM
         bll_hocvien_infomation bll_hv = new bll_hocvien_infomation();
         bot_hocvien_infomation bot_hv = new bot_hocvien_infomation();
         bot_vitri_khu bot_vt = new bot_vitri_khu();
+        static string stt_;
         public InThe_()
         {
             InitializeComponent();
             btnKiemTra.Enabled = false;
             btnXuatAnh.Enabled = false;
+            txtSTT.Select();
         }
 
         private void InThe__Load(object sender, EventArgs e)
@@ -74,6 +76,16 @@ namespace QL_HocVien._SYSTEM
             {
                 try
                 {
+                    if (pictureBox1.Image != null)
+                    {
+                        pictureBox1.Image.Dispose();
+                        pictureBox1.Image = null;
+                    }
+                    if (picResult.Image != null)
+                    {
+                        picResult.Image.Dispose();
+                        picResult.Image = null;
+                    }
                     bll_hv.loadInfoHocVien(bot_hv);
                     lblPhapDanh.Text = bot_hv.phapdanh;
                     lblTheDanh.Text = bot_hv.thedanh;
@@ -81,6 +93,9 @@ namespace QL_HocVien._SYSTEM
                     lblVitri.Text = bot_hv.vitri;
                     lblCaNiemPhat.Text = bot_hv.caniemphat;
                     createBarcode(txtSTT.Text);
+                    //barCodeControl1.CreateGraphics();
+                    
+
                     btnXuatAnh.Enabled = true;
                 }
                 catch (Exception ex)
@@ -99,7 +114,7 @@ namespace QL_HocVien._SYSTEM
             barcode.DisplayChecksum = false;
             barcode.TildeEnabled = false;
             barcode.Symbology = KeepAutomation.Barcode.Symbology.Code128Auto;
-            barcode.CodeToEncode = txtSTT.Text;
+            barcode.CodeToEncode = stt_;
             barcode.X = 1;
             barcode.Y = 30;
             barcode.BarCodeWidth = 73;
@@ -109,8 +124,8 @@ namespace QL_HocVien._SYSTEM
             barcode.BarcodeUnit = KeepAutomation.Barcode.BarcodeUnit.Pixel;
             barcode.Orientation = KeepAutomation.Barcode.Orientation.Degree0;
             barcode.DPI = 72;
-            fileName = stt_ + ".jpg";
-            barcode.ImageFormat = System.Drawing.Imaging.ImageFormat.Jpeg;
+            fileName = stt_ + ".png";
+            barcode.ImageFormat = System.Drawing.Imaging.ImageFormat.Png;
             barcode.generateBarcodeToImageFile(fileName);
             picResult.Image = Image.FromFile(fileName);
             
@@ -135,7 +150,6 @@ namespace QL_HocVien._SYSTEM
 
         //private void btnXuatTatCa_Click(object sender, EventArgs e)
         //{
-        //    string stt_;
         //    string fileName;
         //    DialogResult dr = new DialogResult();
         //    dr = MessageBox.Show("Xuất tất cả các thẻ hiện có trong danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -223,6 +237,65 @@ namespace QL_HocVien._SYSTEM
             {
                 if (btnXuatAnh.Enabled)
                     btnXuatAnh.PerformClick();
+            }
+        }
+
+        private void btnXuatAll_Click(object sender, EventArgs e)
+        {
+            string fileName;
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Xuất tất cả các thẻ hiện có trong danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+
+                DataTable dt = new DataTable();
+                dt=bll_hv.loadInfoHocVien_PrintAll();
+                int rows = dt.Rows.Count;
+                int count_ = 0;
+                //MessageBox.Show(rows.ToString());
+                for (int i = 0; i < rows; i+=1)
+                {
+                    try
+                    {
+                        if (pictureBox1.Image != null)
+                        {
+                            pictureBox1.Image.Dispose();
+                            pictureBox1.Image = null;
+                        }
+                        if (picResult.Image != null)
+                        {
+                            picResult.Image.Dispose();
+                            picResult.Image = null;
+                        }
+                        lblPhapDanh.Text = dt.Rows[i][0].ToString();
+                        lblTheDanh.Text = dt.Rows[i][1].ToString();
+                        lblNgaySinh.Text = dt.Rows[i][2].ToString();
+                        lblVitri.Text = dt.Rows[i][3].ToString();
+                        lblCaNiemPhat.Text = dt.Rows[i][4].ToString();
+                        stt_ = dt.Rows[i][5].ToString();
+                        createBarcode(stt_);
+                        //MessageBox.Show(stt_);
+                        fileName = "D://The Chua Van Duc/" + stt_ + ".png";
+                        if (File.Exists(fileName))
+                        {
+                            File.Delete(fileName);
+                        }
+                        ControlToBitmap(panel1, fileName);
+                        count_++;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                if (count_ == rows)
+                {
+                    MessageBox.Show("In tất cả các thẻ thành công! Vui lòng kiểm tra file theo đường dấn (D://The Chua Van Duc)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("In không thành công! Vui lòng kiểm tra file theo đường dấn (D://The Chua Van Duc) và thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }
