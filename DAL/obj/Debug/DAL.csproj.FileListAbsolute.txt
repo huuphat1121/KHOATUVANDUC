@@ -9,3 +9,4 @@ D:\QLKT\KHOATUVANDUC\DAL\bin\Debug\npgsql.dll
 D:\QLKT\KHOATUVANDUC\DAL\obj\Debug\DAL.dll
 D:\QLKT\KHOATUVANDUC\DAL\obj\Debug\DAL.pdb
 D:\QLKT\KHOATUVANDUC\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\DAL\bin\Debug\npgsql.dll

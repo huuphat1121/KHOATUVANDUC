@@ -124,7 +124,7 @@ namespace QL_HocVien._SYSTEM
             barcode.BarcodeUnit = KeepAutomation.Barcode.BarcodeUnit.Pixel;
             barcode.Orientation = KeepAutomation.Barcode.Orientation.Degree0;
             barcode.DPI = 72;
-            fileName = stt_ + ".png";
+            fileName = "/images bar"+stt_ + ".png";
             barcode.ImageFormat = System.Drawing.Imaging.ImageFormat.Png;
             barcode.generateBarcodeToImageFile(fileName);
             picResult.Image = Image.FromFile(fileName);

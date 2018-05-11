@@ -57,3 +57,5 @@ U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\bin\Debug\KeepAutomation.Ba
 U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._COMMON_CONTROL.picResultCommon.resources
 U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._QUANLY.frmQLCaNiemPhat.resources
 D:\QLKT\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._EDIT.frmEditCaNiemPhat.resources
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\obj\Debug\QL_HocVien._EDIT.frmEditCaNiemPhat.resources
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\QL_HocVien\bin\Debug\log4net.dll
