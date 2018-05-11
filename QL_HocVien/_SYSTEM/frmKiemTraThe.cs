@@ -19,7 +19,8 @@ namespace QL_HocVien._SYSTEM
         public frmKiemTraThe()
         {
             InitializeComponent();
-            txtMaHocVien.Select();
+            txtSTT.Select();
+            
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
@@ -27,14 +28,14 @@ namespace QL_HocVien._SYSTEM
             this.Close();
         }
 
-        private void txtMaHocVien_KeyDown(object sender, KeyEventArgs e)
+        private void txtSTT_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (!txtMaHocVien.Text.Equals(""))
+                if (!txtSTT.Text.Equals(""))
                 {
                     
-                    bot_hv.hocvien_id = int.Parse(txtMaHocVien.Text);
+                    bot_hv.hocvien_id = int.Parse(txtSTT.Text);
                     if (bll_hv.checkID(bot_hv) == 1)
                     {
                         MessageBox.Show("Học viên chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -44,18 +45,14 @@ namespace QL_HocVien._SYSTEM
                         bll_hv.loadInfoHocVien(bot_hv);
                         lblPhapDanh.Text = bot_hv.phapdanh;
                         lblTheDanh.Text = bot_hv.thedanh;
-                        lblNamSinh.Text = bot_hv.namsinh.ToString();
-                        lblDienThoai.Text = bot_hv.phone;
+                        if(!bot_hv.namsinh.Equals(-1))
+                            lblNamSinh.Text = bot_hv.namsinh.ToString();
+                        lblSTT.Text = bot_hv.hocvien_id.ToString();
                         lblViTri.Text = bot_hv.vitri;
                         lblCaNiemPhat.Text = bot_hv.caniemphat;
                     }
                     
                 }
-            }
-            if (e.KeyCode == Keys.Back)
-            {
-                txtMaHocVien.Text = "";
-                txtMaHocVien.Select(); 
             }
         }
 
@@ -64,6 +61,62 @@ namespace QL_HocVien._SYSTEM
             if (e.KeyCode == Keys.Enter)
             {
 
+            }
+        }
+
+        private void txtCMND_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!txtCMND.Text.Equals(""))
+                {
+
+                    bot_hv.cmnd = txtCMND.Text;
+                    if (bll_hv.checkCMND(bot_hv) == 1)
+                    {
+                        MessageBox.Show("Học viên chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        bll_hv.loadInfoHocVienCMND(bot_hv);
+                        lblPhapDanh.Text = bot_hv.phapdanh;
+                        lblTheDanh.Text = bot_hv.thedanh;
+                        if (!bot_hv.namsinh.Equals(-1))
+                            lblNamSinh.Text = bot_hv.namsinh.ToString();
+                        lblSTT.Text = bot_hv.hocvien_id.ToString();
+                        lblViTri.Text = bot_hv.vitri;
+                        lblCaNiemPhat.Text = bot_hv.caniemphat;
+                    }
+
+                }
+            }
+        }
+
+        private void txtTheDanh_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!txtTheDanh.Text.Equals(""))
+                {
+
+                    bot_hv.thedanh = txtTheDanh.Text;
+                    if (bll_hv.checkName(bot_hv) == 1)
+                    {
+                        MessageBox.Show("Học viên chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        bll_hv.loadInfoHocVienTheDanh(bot_hv);
+                        lblPhapDanh.Text = bot_hv.phapdanh;
+                        lblTheDanh.Text = bot_hv.thedanh;
+                        if (!bot_hv.namsinh.Equals(-1))
+                            lblNamSinh.Text = bot_hv.namsinh.ToString();
+                        lblSTT.Text = bot_hv.hocvien_id.ToString();
+                        lblViTri.Text = bot_hv.vitri;
+                        lblCaNiemPhat.Text = bot_hv.caniemphat;
+                    }
+
+                }
             }
         }
     }

@@ -88,6 +88,7 @@ namespace ImportData
                 Microsoft.Office.Interop.Excel.Range range = sheet.UsedRange;
                 int rows = range.Rows.Count;
                 int cols = range.Columns.Count;
+                //MessageBox.Show(rows.ToString());
                 for (int i = 2; i <= rows; i++)
                 {
                     hocvien_id_ = int.Parse(range.Cells[i, 1].Value.ToString());
@@ -98,22 +99,22 @@ namespace ImportData
                     }else
                     {
                         //hocvien_id_ = int.Parse(range.Cells[i, 1].Value.ToString());
-                        if (!range.Cells[i, 3].Value.ToString().Equals(""))
+                        if (!range.Cells[i, 3].Value.ToString().Equals(null) && !range.Cells[i, 3].Value.ToString().Equals(" "))
                             phapdanh_ = range.Cells[i, 3].Value.ToString();
                         else phapdanh_ = "";
-                        if (!range.Cells[i, 2].Value.ToString().Equals(""))
+                        if (!range.Cells[i, 2].Value.ToString().Equals(null) && !range.Cells[i, 2].Value.ToString().Equals(" "))
                             thedanh_ = range.Cells[i, 2].Value.ToString();
                         else thedanh_ = "";
-                        if (!range.Cells[i, 4].Value.ToString().Equals(""))
+                        if (!range.Cells[i, 4].Value.ToString().Equals(null) && !range.Cells[i, 4].Value.ToString().Equals(" "))
                             namsinh_ = range.Cells[i, 4].Value.ToString();
                         else namsinh_ = "";
-                        if (!range.Cells[i, 5].Value.ToString().Equals(""))
+                        if (!range.Cells[i, 5].Value.ToString().Equals(null) && !range.Cells[i, 5].Value.ToString().Equals(" "))
                             cmnd_ = range.Cells[i, 5].Value.ToString();
                         else cmnd_ = "";
-                        if (!range.Cells[i, 6].Value.ToString().Equals(""))
+                        if (!range.Cells[i, 6].Value.ToString().Equals(null) && !range.Cells[i, 6].Value.ToString().Equals(" "))
                             phone_nguoithan_ = range.Cells[i, 6].Value.ToString();
                         else phone_nguoithan_ = "";
-                        if (!range.Cells[i, 7].Value.ToString().Equals(""))
+                        if (!range.Cells[i, 7].Value.ToString().Equals(null) && !range.Cells[i, 7].Value.ToString().Equals(" "))
                             diachi_ = range.Cells[i, 7].Value.ToString();
                         else diachi_ = "";
                         sql_ = "insert into hocvien_info(hocvien_id,phapdanh,thedanh,namsinh,cmnd,nguoithan_phone,hocvien_diachi) values('" + hocvien_id_ + "','" + phapdanh_ + "','" + thedanh_ + "','" + namsinh_ + "','" + cmnd_ + "','" + phone_nguoithan_ + "','" + diachi_ + "')";

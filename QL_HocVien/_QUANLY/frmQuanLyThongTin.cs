@@ -141,5 +141,17 @@ namespace QL_HocVien._QUANLY
             if (e.KeyCode == Keys.Enter)
                 btnSTT.PerformClick();
         }
+
+        private void txtTheDanh_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnTheDanh.PerformClick();
+        }
+
+        private void btnTheDanh_Click(object sender, EventArgs e)
+        {
+            dgvHocVien.DataSource = bll_sear_hv.searchTheDanh(txtTheDanh.Text);
+            isDgvEmpty();
+        }
     }
 }

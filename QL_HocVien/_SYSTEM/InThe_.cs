@@ -24,6 +24,7 @@ namespace QL_HocVien._SYSTEM
             InitializeComponent();
             btnKiemTra.Enabled = false;
             btnXuatAnh.Enabled = false;
+            btnXuatAnhCu.Enabled = false;
             txtSTT.Select();
         }
 
@@ -44,7 +45,7 @@ namespace QL_HocVien._SYSTEM
             rect.Size = ctrlSize;
             g.DrawImage(bitmap, rect);
             pictureBox1.Image = result;
-            System.Drawing.Imaging.ImageFormat format = System.Drawing.Imaging.ImageFormat.Png;
+            System.Drawing.Imaging.ImageFormat format = System.Drawing.Imaging.ImageFormat.Icon;
             pictureBox1.Image.Save(fileName, format);
         }
         private void button1_Click(object sender, EventArgs e)
@@ -86,17 +87,30 @@ namespace QL_HocVien._SYSTEM
                         picResult.Image.Dispose();
                         picResult.Image = null;
                     }
+                    if (picResult1.Image != null)
+                    {
+                        picResult1.Image.Dispose();
+                        picResult1.Image = null;
+                    }
                     bll_hv.loadInfoHocVien(bot_hv);
                     lblPhapDanh.Text = bot_hv.phapdanh;
                     lblTheDanh.Text = bot_hv.thedanh;
-                    lblNgaySinh.Text = bot_hv.namsinh.ToString();
+                    if (!bot_hv.namsinh.Equals(-1))
+                        lblNgaySinh.Text = bot_hv.namsinh.ToString();
+                    else lblNgaySinh.Text = "";
                     lblVitri.Text = bot_hv.vitri;
                     lblCaNiemPhat.Text = bot_hv.caniemphat;
+                    lblPhapDanh1.Text = bot_hv.phapdanh;
+                    lblTheDanh1.Text = bot_hv.thedanh;
+                    if (!bot_hv.namsinh.Equals(-1))
+                        lblNgaySinh1.Text = bot_hv.namsinh.ToString();
+                    else lblNgaySinh1.Text = "";
                     createBarcode(txtSTT.Text);
                     //barCodeControl1.CreateGraphics();
                     
 
                     btnXuatAnh.Enabled = true;
+                    btnXuatAnhCu.Enabled = true;
                 }
                 catch (Exception ex)
                 {
@@ -113,22 +127,23 @@ namespace QL_HocVien._SYSTEM
             BarCode barcode = new BarCode();
             barcode.DisplayChecksum = false;
             barcode.TildeEnabled = false;
-            barcode.Symbology = KeepAutomation.Barcode.Symbology.Code128Auto;
+            barcode.Symbology = KeepAutomation.Barcode.Symbology.Code93;
             barcode.CodeToEncode = stt_;
             barcode.X = 1;
             barcode.Y = 30;
-            barcode.BarCodeWidth = 73;
+            barcode.BarCodeWidth = 100;
             barcode.BarCodeHeight = 53;
             barcode.DisplayText = true;
             barcode.DisplayStartStop = true;
             barcode.BarcodeUnit = KeepAutomation.Barcode.BarcodeUnit.Pixel;
             barcode.Orientation = KeepAutomation.Barcode.Orientation.Degree0;
-            barcode.DPI = 72;
-            fileName = "/images bar"+stt_ + ".png";
+            barcode.DPI = 400;
+            fileName = stt_ + ".ico";
             barcode.ImageFormat = System.Drawing.Imaging.ImageFormat.Png;
             barcode.generateBarcodeToImageFile(fileName);
             picResult.Image = Image.FromFile(fileName);
-            
+            picResult1.Image = Image.FromFile(fileName);
+
         }
         private void btnXuatAnh_Click(object sender, EventArgs e)
         {
@@ -136,7 +151,7 @@ namespace QL_HocVien._SYSTEM
             {
                 Directory.CreateDirectory("D://The Chua Van Duc");
             }
-            string fileName= "D://The Chua Van Duc/"+txtSTT.Text + ".png";
+            string fileName= "D://The Chua Van Duc/"+txtSTT.Text + ".ico";
             if (File.Exists(fileName))
             {
                 File.Delete(fileName);
@@ -144,6 +159,7 @@ namespace QL_HocVien._SYSTEM
             ControlToBitmap(panel1, fileName);
             MessageBox.Show("Xuất file thành công! Vui lòng kiểm tra theo đường dẫn D:/The Chua Van Duc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnXuatAnh.Enabled = false;
+            btnXuatAnhCu.Enabled = false;
             txtSTT.Text = "";
 
         }
@@ -194,7 +210,12 @@ namespace QL_HocVien._SYSTEM
             else
             {
                 if (txtSTT.Text.Equals(""))
+                {
                     btnKiemTra.Enabled = false;
+                    btnXuatAnh.Enabled = false;
+                    btnXuatAnhCu.Enabled = false;
+                }
+                    
             }
         }
 
@@ -275,7 +296,7 @@ namespace QL_HocVien._SYSTEM
                         stt_ = dt.Rows[i][5].ToString();
                         createBarcode(stt_);
                         //MessageBox.Show(stt_);
-                        fileName = "D://The Chua Van Duc/" + stt_ + ".png";
+                        fileName = "D://The Chua Van Duc/" + stt_ + ".ico";
                         if (File.Exists(fileName))
                         {
                             File.Delete(fileName);
@@ -297,6 +318,24 @@ namespace QL_HocVien._SYSTEM
                     MessageBox.Show("In không thành công! Vui lòng kiểm tra file theo đường dấn (D://The Chua Van Duc) và thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void btnXuatAnhCu_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists("D://The Chua Van Duc/The Cu"))
+            {
+                Directory.CreateDirectory("D://The Chua Van Duc/The Cu");
+            }
+            string fileName = "D://The Chua Van Duc/The Cu/" + txtSTT.Text + ".ico";
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+            ControlToBitmap(panel2, fileName);
+            MessageBox.Show("Xuất file thành công! Vui lòng kiểm tra theo đường dẫn D:/The Chua Van Duc/The Cu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnXuatAnh.Enabled = false;
+            btnXuatAnhCu.Enabled = false;
+            txtSTT.Text = "";
         }
     }
 }

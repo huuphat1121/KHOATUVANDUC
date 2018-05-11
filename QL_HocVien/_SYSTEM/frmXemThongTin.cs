@@ -23,10 +23,10 @@ namespace QL_HocVien._SYSTEM
         private void initForm()
         {
             txtSTT.Select();
-            cbbKhu.DisplayMember = "khu_id";
             cbbKhu.DataSource = bll_hhv.loadCbbKhu();
-            cbbCaNiem.DisplayMember = "ca_niem";
+            cbbKhu.DisplayMember = "khu_id";
             cbbCaNiem.DataSource = bll_hhv.loadCbbCaNiem();
+            cbbCaNiem.DisplayMember = "ca_niem";
             dgvHocVien.DataSource = bll_hhv.loadAllInfo_HocVien();
         }
 
@@ -140,8 +140,12 @@ namespace QL_HocVien._SYSTEM
 
         private void btnSTT_Click(object sender, EventArgs e)
         {
-            dgvHocVien.DataSource = bll_sear_hv.searchSTT(int.Parse(txtSTT.Text));
-            isDgvEmpty();
+            if (!txtSTT.Text.Equals(""))
+            {
+                dgvHocVien.DataSource = bll_sear_hv.searchSTT(int.Parse(txtSTT.Text));
+                isDgvEmpty();
+            }
+                
         }
     }
 }

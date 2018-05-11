@@ -25,6 +25,20 @@ namespace BLL
             return (count == 0) ? 1 : 0;
         }
 
+        public int checkName(bot_hocvien_infomation bot_hv)
+        {
+            string sqlTemp = "select count(*) from hocvien_info where thedanh = N'" + bot_hv.thedanh + "'";
+            int count = int.Parse(cn.GetValue(sqlTemp).ToString());
+            return (count == 0) ? 1 : 0;
+        }
+
+        public int checkCMND(bot_hocvien_infomation bot_hv)
+        {
+            string sqlTemp = "select count(*) from hocvien_info where cmnd = '" + bot_hv.cmnd + "'";
+            int count = int.Parse(cn.GetValue(sqlTemp).ToString());
+            return (count == 0) ? 1 : 0;
+        }
+
         /*
          * Fuction Load Information
          * */
@@ -36,20 +50,51 @@ namespace BLL
             bot_hv.phapdanh = dt.Rows[0][0].ToString();
             bot_hv.thedanh = dt.Rows[0][1].ToString();
             bot_hv.phone = dt.Rows[0][3].ToString();
-            bot_hv.namsinh = int.Parse(dt.Rows[0][2].ToString());
+            if (!dt.Rows[0][2].ToString().Equals(""))
+                bot_hv.namsinh = int.Parse(dt.Rows[0][2].ToString());
+            else bot_hv.namsinh = -1;
             bot_hv.vitri = dt.Rows[0][4].ToString();
             bot_hv.caniemphat = dt.Rows[0][5].ToString();
         }
 
+        public void loadInfoHocVienCMND(bot_hocvien_infomation bot_hv)
+        {
+            DataTable dt = new DataTable();
+            string sql_ = "select phapdanh, thedanh, namsinh, phone, vitri, caniemphat from hocvien_info where cmnd='" + bot_hv.cmnd + "'";
+            dt = cn.GetAllValue(sql_);
+            bot_hv.phapdanh = dt.Rows[0][0].ToString();
+            bot_hv.thedanh = dt.Rows[0][1].ToString();
+            bot_hv.phone = dt.Rows[0][3].ToString();
+            if (!dt.Rows[0][2].ToString().Equals(""))
+                bot_hv.namsinh = int.Parse(dt.Rows[0][2].ToString());
+            else bot_hv.namsinh = -1;
+            bot_hv.vitri = dt.Rows[0][4].ToString();
+            bot_hv.caniemphat = dt.Rows[0][5].ToString();
+        }
+
+        public void loadInfoHocVienTheDanh(bot_hocvien_infomation bot_hv)
+        {
+            DataTable dt = new DataTable();
+            string sql_ = "select phapdanh, thedanh, namsinh, phone, vitri, caniemphat from hocvien_info where thedanh='" + bot_hv.thedanh + "'";
+            dt = cn.GetAllValue(sql_);
+            bot_hv.phapdanh = dt.Rows[0][0].ToString();
+            bot_hv.thedanh = dt.Rows[0][1].ToString();
+            bot_hv.phone = dt.Rows[0][3].ToString();
+            if (!dt.Rows[0][2].ToString().Equals(""))
+                bot_hv.namsinh = int.Parse(dt.Rows[0][2].ToString());
+            else bot_hv.namsinh = -1;
+            bot_hv.vitri = dt.Rows[0][4].ToString();
+            bot_hv.caniemphat = dt.Rows[0][5].ToString();
+        }
 
         public DataTable loadInfoHocVien_PrintAll()
         {
-            string sql_ = "select phapdanh, thedanh, namsinh, vitri, caniemphat,hocvien_id from hocvien_info ";
+            string sql_ = "select phapdanh, thedanh, namsinh, vitri, caniemphat,hocvien_id from hocvien_info order by hocvien_id";
             return cn.GetAllValue(sql_);
         }
         public DataTable loadAllInfo_HocVien()
         {
-            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info order by hocvien_id";
             return cn.GetAllValue(sql_);
         }
 

@@ -1,10 +1,3 @@
-U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\bin\Debug\BLL.dll
-U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\bin\Debug\BLL.pdb
-U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\bin\Debug\DAL.dll
-U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\bin\Debug\DAL.pdb
-U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\obj\Debug\BLL.dll
-U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\obj\Debug\BLL.pdb
 D:\QLKT\KHOATUVANDUC\BLL\bin\Debug\BLL.dll
 D:\QLKT\KHOATUVANDUC\BLL\bin\Debug\BLL.pdb
 D:\QLKT\KHOATUVANDUC\BLL\bin\Debug\DAL.dll
@@ -13,4 +6,11 @@ D:\QLKT\KHOATUVANDUC\BLL\bin\Debug\DAL.pdb
 D:\QLKT\KHOATUVANDUC\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\QLKT\KHOATUVANDUC\BLL\obj\Debug\BLL.dll
 D:\QLKT\KHOATUVANDUC\BLL\obj\Debug\BLL.pdb
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\bin\Debug\BLL.dll
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\bin\Debug\BLL.pdb
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\bin\Debug\DAL.dll
 U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\bin\Debug\Npgsql.dll
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\bin\Debug\DAL.pdb
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\obj\Debug\BLL.dll
+U:\Work\Sources\KHOATUVANDUC\KHOATUVANDUC\BLL\obj\Debug\BLL.pdb

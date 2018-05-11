@@ -54,9 +54,9 @@
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(379, 491);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -68,7 +68,7 @@
             this.button1.AutoSize = true;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(271, 444);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 39);
             this.button1.TabIndex = 6;
@@ -84,9 +84,9 @@
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(16, 225);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(347, 207);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
@@ -98,7 +98,7 @@
             this.btnQLCaNiem.AutoSize = true;
             this.btnQLCaNiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLCaNiem.Location = new System.Drawing.Point(29, 162);
-            this.btnQLCaNiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLCaNiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLCaNiem.Name = "btnQLCaNiem";
             this.btnQLCaNiem.Size = new System.Drawing.Size(300, 39);
             this.btnQLCaNiem.TabIndex = 5;
@@ -112,7 +112,7 @@
             this.btnQLViTri.AutoSize = true;
             this.btnQLViTri.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLViTri.Location = new System.Drawing.Point(29, 98);
-            this.btnQLViTri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLViTri.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLViTri.Name = "btnQLViTri";
             this.btnQLViTri.Size = new System.Drawing.Size(300, 39);
             this.btnQLViTri.TabIndex = 4;
@@ -126,9 +126,9 @@
             this.btnQLThongTin.AutoSize = true;
             this.btnQLThongTin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLThongTin.Location = new System.Drawing.Point(29, 37);
-            this.btnQLThongTin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLThongTin.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLThongTin.Name = "btnQLThongTin";
-            this.btnQLThongTin.Size = new System.Drawing.Size(335, 39);
+            this.btnQLThongTin.Size = new System.Drawing.Size(300, 39);
             this.btnQLThongTin.TabIndex = 3;
             this.btnQLThongTin.Text = "Quản Lý Thông Tin Học Viên";
             this.btnQLThongTin.UseVisualStyleBackColor = true;
@@ -142,9 +142,9 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 23);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(347, 194);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
@@ -157,7 +157,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInThe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInThe.Location = new System.Drawing.Point(39, 150);
-            this.btnInThe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInThe.Margin = new System.Windows.Forms.Padding(4);
             this.btnInThe.Name = "btnInThe";
             this.btnInThe.Size = new System.Drawing.Size(269, 37);
             this.btnInThe.TabIndex = 2;
@@ -172,7 +172,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXemThongTin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemThongTin.Location = new System.Drawing.Point(39, 96);
-            this.btnXemThongTin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXemThongTin.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemThongTin.Name = "btnXemThongTin";
             this.btnXemThongTin.Size = new System.Drawing.Size(269, 37);
             this.btnXemThongTin.TabIndex = 1;
@@ -187,7 +187,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKiemTraThe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKiemTraThe.Location = new System.Drawing.Point(39, 42);
-            this.btnKiemTraThe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnKiemTraThe.Margin = new System.Windows.Forms.Padding(4);
             this.btnKiemTraThe.Name = "btnKiemTraThe";
             this.btnKiemTraThe.Size = new System.Drawing.Size(269, 37);
             this.btnKiemTraThe.TabIndex = 0;
@@ -215,7 +215,7 @@
             this.ClientSize = new System.Drawing.Size(379, 491);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khóa Tu Chùa Vạn Đức";

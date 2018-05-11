@@ -21,7 +21,7 @@ namespace BLL
 
         public DataTable loadDgvViTri(string text)
         {
-            string sql_ = "select * from vitri_khu where khu_id='"+text+"'";
+            string sql_ = "select * from vitri_khu where khu_id='"+text+"' order by vitri";
             return cn.GetAllValue(sql_);
         }
 
@@ -34,7 +34,7 @@ namespace BLL
 
         public int checkViTri(bot_vitri_khu _bot_vt)
         {
-            string sqlTemp = "select count(*) from hocvien_info where khu_id = '" + _bot_vt.khu_id + "' and vitri='"+_bot_vt.vitri+"'";
+            string sqlTemp = "select count(*) from vitri_khu where khu_id = '" + _bot_vt.khu_id + "' and vitri='"+_bot_vt.vitri+"'";
             int count = int.Parse(cn.GetValue(sqlTemp).ToString());
             return (count == 0) ? 1 : 0;
         }

@@ -14,7 +14,7 @@ namespace BLL
 
         public DataTable searchPhapDanh(string phapdanh_)
         {
-            string sql_ = "select * from hocvien_info where phapdanh='" + phapdanh_ + "'";
+            string sql_ = "select * from hocvien_info where phapdanh=N'" + phapdanh_ + "'";
             return cn.GetAllValue(sql_);
         }
 

@@ -43,9 +43,17 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnXuatAll = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnXuatAnhCu = new System.Windows.Forms.Button();
+            this.picResult1 = new System.Windows.Forms.PictureBox();
+            this.lblNgaySinh1 = new System.Windows.Forms.Label();
+            this.lblTheDanh1 = new System.Windows.Forms.Label();
+            this.lblPhapDanh1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picResult1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,8 +66,9 @@
             this.panel1.Controls.Add(this.lblTheDanh);
             this.panel1.Controls.Add(this.lblPhapDanh);
             this.panel1.Controls.Add(this.lblCaNiemPhat);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(235, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(699, 491);
             this.panel1.TabIndex = 0;
@@ -67,12 +76,11 @@
             // picResult
             // 
             this.picResult.BackColor = System.Drawing.Color.Transparent;
-            this.picResult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picResult.Location = new System.Drawing.Point(468, 407);
-            this.picResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picResult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picResult.Location = new System.Drawing.Point(456, 401);
+            this.picResult.Margin = new System.Windows.Forms.Padding(4);
             this.picResult.Name = "picResult";
-            this.picResult.Size = new System.Drawing.Size(112, 53);
-            this.picResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picResult.Size = new System.Drawing.Size(128, 67);
             this.picResult.TabIndex = 1;
             this.picResult.TabStop = false;
             // 
@@ -156,7 +164,7 @@
             // 
             this.txtSTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSTT.Location = new System.Drawing.Point(20, 52);
-            this.txtSTT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSTT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSTT.Name = "txtSTT";
             this.txtSTT.Size = new System.Drawing.Size(183, 30);
             this.txtSTT.TabIndex = 2;
@@ -168,7 +176,7 @@
             // 
             this.btnKiemTra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKiemTra.Location = new System.Drawing.Point(20, 114);
-            this.btnKiemTra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnKiemTra.Margin = new System.Windows.Forms.Padding(4);
             this.btnKiemTra.Name = "btnKiemTra";
             this.btnKiemTra.Size = new System.Drawing.Size(184, 36);
             this.btnKiemTra.TabIndex = 3;
@@ -179,8 +187,8 @@
             // btnXuatAnh
             // 
             this.btnXuatAnh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatAnh.Location = new System.Drawing.Point(20, 161);
-            this.btnXuatAnh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXuatAnh.Location = new System.Drawing.Point(20, 164);
+            this.btnXuatAnh.Margin = new System.Windows.Forms.Padding(4);
             this.btnXuatAnh.Name = "btnXuatAnh";
             this.btnXuatAnh.Size = new System.Drawing.Size(184, 36);
             this.btnXuatAnh.TabIndex = 3;
@@ -191,7 +199,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(40, 175);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(116, 14);
             this.pictureBox1.TabIndex = 4;
@@ -200,8 +208,8 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(20, 255);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Location = new System.Drawing.Point(19, 314);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(184, 36);
             this.btnThoat.TabIndex = 3;
@@ -212,14 +220,88 @@
             // btnXuatAll
             // 
             this.btnXuatAll.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatAll.Location = new System.Drawing.Point(20, 208);
-            this.btnXuatAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXuatAll.Location = new System.Drawing.Point(20, 214);
+            this.btnXuatAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnXuatAll.Name = "btnXuatAll";
             this.btnXuatAll.Size = new System.Drawing.Size(184, 36);
             this.btnXuatAll.TabIndex = 3;
             this.btnXuatAll.Text = "Xuất Tất Cả";
             this.btnXuatAll.UseVisualStyleBackColor = true;
             this.btnXuatAll.Click += new System.EventHandler(this.btnXuatAll_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.picResult1);
+            this.panel2.Controls.Add(this.lblNgaySinh1);
+            this.panel2.Controls.Add(this.lblPhapDanh1);
+            this.panel2.Controls.Add(this.lblTheDanh1);
+            this.panel2.Location = new System.Drawing.Point(350, 291);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(349, 200);
+            this.panel2.TabIndex = 2;
+            // 
+            // btnXuatAnhCu
+            // 
+            this.btnXuatAnhCu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatAnhCu.Location = new System.Drawing.Point(20, 264);
+            this.btnXuatAnhCu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXuatAnhCu.Name = "btnXuatAnhCu";
+            this.btnXuatAnhCu.Size = new System.Drawing.Size(184, 36);
+            this.btnXuatAnhCu.TabIndex = 3;
+            this.btnXuatAnhCu.Text = "Xuất Ảnh Thẻ Cũ";
+            this.btnXuatAnhCu.UseVisualStyleBackColor = true;
+            this.btnXuatAnhCu.Click += new System.EventHandler(this.btnXuatAnhCu_Click);
+            // 
+            // picResult1
+            // 
+            this.picResult1.BackColor = System.Drawing.Color.Transparent;
+            this.picResult1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picResult1.Location = new System.Drawing.Point(106, 110);
+            this.picResult1.Margin = new System.Windows.Forms.Padding(4);
+            this.picResult1.Name = "picResult1";
+            this.picResult1.Size = new System.Drawing.Size(128, 67);
+            this.picResult1.TabIndex = 6;
+            this.picResult1.TabStop = false;
+            // 
+            // lblNgaySinh1
+            // 
+            this.lblNgaySinh1.AutoSize = true;
+            this.lblNgaySinh1.BackColor = System.Drawing.Color.Transparent;
+            this.lblNgaySinh1.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgaySinh1.Location = new System.Drawing.Point(114, 73);
+            this.lblNgaySinh1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNgaySinh1.Name = "lblNgaySinh1";
+            this.lblNgaySinh1.Size = new System.Drawing.Size(22, 22);
+            this.lblNgaySinh1.TabIndex = 3;
+            this.lblNgaySinh1.Text = "A";
+            this.lblNgaySinh1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTheDanh1
+            // 
+            this.lblTheDanh1.AutoSize = true;
+            this.lblTheDanh1.BackColor = System.Drawing.Color.Transparent;
+            this.lblTheDanh1.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTheDanh1.Location = new System.Drawing.Point(114, 41);
+            this.lblTheDanh1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTheDanh1.Name = "lblTheDanh1";
+            this.lblTheDanh1.Size = new System.Drawing.Size(22, 22);
+            this.lblTheDanh1.TabIndex = 4;
+            this.lblTheDanh1.Text = "A";
+            this.lblTheDanh1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPhapDanh1
+            // 
+            this.lblPhapDanh1.AutoSize = true;
+            this.lblPhapDanh1.BackColor = System.Drawing.Color.Transparent;
+            this.lblPhapDanh1.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhapDanh1.Location = new System.Drawing.Point(114, 8);
+            this.lblPhapDanh1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPhapDanh1.Name = "lblPhapDanh1";
+            this.lblPhapDanh1.Size = new System.Drawing.Size(22, 22);
+            this.lblPhapDanh1.TabIndex = 5;
+            this.lblPhapDanh1.Text = "A";
+            this.lblPhapDanh1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // InThe_
             // 
@@ -228,6 +310,7 @@
             this.ClientSize = new System.Drawing.Size(944, 517);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnXuatAll);
+            this.Controls.Add(this.btnXuatAnhCu);
             this.Controls.Add(this.btnXuatAnh);
             this.Controls.Add(this.btnKiemTra);
             this.Controls.Add(this.txtSTT);
@@ -245,6 +328,9 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picResult1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +352,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXuatAll;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnXuatAnhCu;
+        private System.Windows.Forms.PictureBox picResult1;
+        private System.Windows.Forms.Label lblNgaySinh1;
+        private System.Windows.Forms.Label lblPhapDanh1;
+        private System.Windows.Forms.Label lblTheDanh1;
     }
 }
