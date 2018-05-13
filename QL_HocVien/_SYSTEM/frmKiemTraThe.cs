@@ -38,7 +38,7 @@ namespace QL_HocVien._SYSTEM
                     bot_hv.hocvien_id = int.Parse(txtSTT.Text);
                     if (bll_hv.checkID(bot_hv) == 1)
                     {
-                        MessageBox.Show("Học viên chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Phật Tử chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -74,7 +74,7 @@ namespace QL_HocVien._SYSTEM
                     bot_hv.cmnd = txtCMND.Text;
                     if (bll_hv.checkCMND(bot_hv) == 1)
                     {
-                        MessageBox.Show("Học viên chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Phật Tử chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -102,7 +102,7 @@ namespace QL_HocVien._SYSTEM
                     bot_hv.thedanh = txtTheDanh.Text;
                     if (bll_hv.checkName(bot_hv) == 1)
                     {
-                        MessageBox.Show("Học viên chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Phật Tử chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {

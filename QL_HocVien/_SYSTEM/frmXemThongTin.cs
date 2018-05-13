@@ -23,8 +23,10 @@ namespace QL_HocVien._SYSTEM
         private void initForm()
         {
             txtSTT.Select();
+            cbbKhu.DisplayMember = "khu_id";
             cbbKhu.DataSource = bll_hhv.loadCbbKhu();
             cbbKhu.DisplayMember = "khu_id";
+            cbbCaNiem.DisplayMember = "ca_niem";
             cbbCaNiem.DataSource = bll_hhv.loadCbbCaNiem();
             cbbCaNiem.DisplayMember = "ca_niem";
             dgvHocVien.DataSource = bll_hhv.loadAllInfo_HocVien();
@@ -69,9 +71,11 @@ namespace QL_HocVien._SYSTEM
 
         private void btnNgayDen_Click(object sender, EventArgs e)
         {
-            DateTime timeTemp = dtpNgayDen.Value;
+            DateTime timeTemp = dtpNgayDenFrom.Value;
             DateTime.Parse(timeTemp.ToString()).ToShortDateString();
-            dgvHocVien.DataSource = bll_sear_hv.searchNgayDen(timeTemp);
+            DateTime timeTemp1 = dtpNgayDenTo.Value;
+            DateTime.Parse(timeTemp1.ToString()).ToShortDateString();
+            dgvHocVien.DataSource = bll_sear_hv.searchNgayDen(timeTemp,timeTemp1);
             isDgvEmpty();
         }
 
@@ -79,7 +83,9 @@ namespace QL_HocVien._SYSTEM
         {
             DateTime timeTemp = dtpNgayDi.Value;
             DateTime.Parse(timeTemp.ToString()).ToShortDateString();
-            dgvHocVien.DataSource = bll_sear_hv.searchNgayDen(timeTemp);
+            DateTime timeTemp1 = dtpNgayVeTo.Value;
+            DateTime.Parse(timeTemp1.ToString()).ToShortDateString();
+            dgvHocVien.DataSource = bll_sear_hv.searchNgayDen(timeTemp,timeTemp1);
             isDgvEmpty();
         }
 
@@ -122,7 +128,8 @@ namespace QL_HocVien._SYSTEM
         {
             ExportExcel excel = new ExportExcel();
             // Lấy về nguồn dữ liệu cần Export là 1 DataTable
-            DataTable dt = bll_hhv.loadAllInfo_HocVien();
+            //DataTable dt = bll_hhv.loadAllInfo_HocVien();
+            DataTable dt = (DataTable)dgvHocVien.DataSource;
             excel.Export(dt, "Danh sach tham gia khoa tu", "DANH SÁCH THAM GIA KHÓA TU VẠN ĐỨC TỰ");
 
         }

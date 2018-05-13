@@ -125,12 +125,12 @@
             this.btnQLThongTin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnQLThongTin.AutoSize = true;
             this.btnQLThongTin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLThongTin.Location = new System.Drawing.Point(29, 37);
+            this.btnQLThongTin.Location = new System.Drawing.Point(28, 37);
             this.btnQLThongTin.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLThongTin.Name = "btnQLThongTin";
             this.btnQLThongTin.Size = new System.Drawing.Size(300, 39);
             this.btnQLThongTin.TabIndex = 3;
-            this.btnQLThongTin.Text = "Quản Lý Thông Tin Học Viên";
+            this.btnQLThongTin.Text = "Quản Lý Thông Tin Phật Tử";
             this.btnQLThongTin.UseVisualStyleBackColor = true;
             this.btnQLThongTin.Click += new System.EventHandler(this.btnQLThongTin_Click);
             // 
@@ -161,7 +161,7 @@
             this.btnInThe.Name = "btnInThe";
             this.btnInThe.Size = new System.Drawing.Size(269, 37);
             this.btnInThe.TabIndex = 2;
-            this.btnInThe.Text = "In Thẻ Học Viên";
+            this.btnInThe.Text = "In Thẻ Phật Tử";
             this.btnInThe.UseVisualStyleBackColor = true;
             this.btnInThe.Click += new System.EventHandler(this.btnInThe_Click);
             // 
@@ -176,7 +176,7 @@
             this.btnXemThongTin.Name = "btnXemThongTin";
             this.btnXemThongTin.Size = new System.Drawing.Size(269, 37);
             this.btnXemThongTin.TabIndex = 1;
-            this.btnXemThongTin.Text = "Xem Thông Tin Học Viên";
+            this.btnXemThongTin.Text = "Xem Thông Tin Phật Tử";
             this.btnXemThongTin.UseVisualStyleBackColor = true;
             this.btnXemThongTin.Click += new System.EventHandler(this.btnXemThongTin_Click);
             // 
@@ -191,7 +191,7 @@
             this.btnKiemTraThe.Name = "btnKiemTraThe";
             this.btnKiemTraThe.Size = new System.Drawing.Size(269, 37);
             this.btnKiemTraThe.TabIndex = 0;
-            this.btnKiemTraThe.Text = "Kiểm Tra Thẻ Học Viên";
+            this.btnKiemTraThe.Text = "Kiểm Tra Thẻ Phật Tử";
             this.btnKiemTraThe.UseVisualStyleBackColor = true;
             this.btnKiemTraThe.Click += new System.EventHandler(this.btnKiemTraThe_Click);
             // 
@@ -216,6 +216,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khóa Tu Chùa Vạn Đức";

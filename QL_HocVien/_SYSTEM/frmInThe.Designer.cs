@@ -128,7 +128,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmInThe";
-            this.Text = "In Thẻ Học Viên";
+            this.Text = "In Thẻ Phật Tử";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBarCode)).EndInit();

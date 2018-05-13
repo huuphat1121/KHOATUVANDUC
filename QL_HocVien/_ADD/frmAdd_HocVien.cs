@@ -27,8 +27,11 @@ namespace QL_HocVien._ADD
             txtSTT.Select();
             cbbKhu.DisplayMember = "khu_id";
             cbbKhu.DataSource = _bll_hv.loadCbbKhu();
+            cbbKhu.DisplayMember = "khu_id";
             cbbCaNiemPhat.DisplayMember = "ca_niem";
             cbbCaNiemPhat.DataSource = _bll_hv.loadCbbCaNiem();
+            cbbCaNiemPhat.DisplayMember = "ca_niem";
+            txtSTT.Text = (_bll_hv.loadSTTMax() + 1).ToString();
         }
 
         private void reloadInitForm(Control control)
@@ -50,7 +53,7 @@ namespace QL_HocVien._ADD
         private void btnHuy_Click(object sender, EventArgs e)
         {
             DialogResult dr = new DialogResult();
-            dr = MessageBox.Show("Dừng thao tác thêm học viên?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            dr = MessageBox.Show("Dừng thao tác thêm Phật Tử?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if(dr==DialogResult.OK)
                 this.Close();
         }
@@ -76,7 +79,7 @@ namespace QL_HocVien._ADD
                         _bot_hv.thedanh = txtTheDanh.Text;
                         _bot_hv.phone = txtDienThoai.Text;
                         _bot_hv.nguoithan_phone = txtDTNguoiThan.Text;
-                        _bot_hv.namsinh = int.Parse(txtNamSinh.Text);
+                        _bot_hv.namsinh = txtNamSinh.Text;
                         _bot_hv.hocvien_diachi = txtDiaChi.Text;
                         _bot_hv.cmnd_note = txtLoaiCMND.Text;
                         _bot_hv.cmnd = txtCMND.Text;
@@ -88,6 +91,7 @@ namespace QL_HocVien._ADD
                         _bot_hv.ngayve = dtpNgayDi.Value;
                         DateTime.Parse(_bot_hv.ngayve.ToString()).ToShortDateString();
                         _bot_hv.ghichu = txtGhiChu.Text;
+                        _bot_hv.thoigian = DateTime.Now;
                         MessageBox.Show(_bll_hv.AddHocVien(_bot_hv), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         reloadInitForm(this);
                         initForm();

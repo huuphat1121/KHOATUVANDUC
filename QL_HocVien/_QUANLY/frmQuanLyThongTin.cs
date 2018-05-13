@@ -15,7 +15,7 @@ namespace QL_HocVien._QUANLY
         bll_hocvien_infomation bll_hhv = new bll_hocvien_infomation();
         bll_search_hocvien bll_sear_hv = new bll_search_hocvien();
         public static int hocvien_id_;
-        public static int namsinh_;
+        public static string namsinh_;
         public static string phapdanh_;
         public static string thedanh_;
         public static string phone_;
@@ -88,6 +88,7 @@ namespace QL_HocVien._QUANLY
             try
             {
                 hocvien_id_ = int.Parse(dgvHocVien.CurrentRow.Cells["hocvien_id"].Value.ToString());
+
                 phapdanh_ = dgvHocVien.CurrentRow.Cells["phapdanh"].Value.ToString();
                 thedanh_ = dgvHocVien.CurrentRow.Cells["thedanh"].Value.ToString();
                 phone_ = dgvHocVien.CurrentRow.Cells["phone"].Value.ToString();
@@ -95,7 +96,7 @@ namespace QL_HocVien._QUANLY
                 cmnd_ = dgvHocVien.CurrentRow.Cells["cmnd"].Value.ToString();
                 cmnd_note_ = dgvHocVien.CurrentRow.Cells["cmnd_note"].Value.ToString();
                 diachi_ = dgvHocVien.CurrentRow.Cells["hocvien_diachi"].Value.ToString();
-                namsinh_ = int.Parse(dgvHocVien.CurrentRow.Cells["namsinh"].Value.ToString());
+                    namsinh_ = dgvHocVien.CurrentRow.Cells["namsinh"].Value.ToString();
                 khu_ = dgvHocVien.CurrentRow.Cells["khu_id"].Value.ToString();
                 vitri_ = dgvHocVien.CurrentRow.Cells["vitri"].Value.ToString();
                 caniemphat_ = dgvHocVien.CurrentRow.Cells["caniemphat"].Value.ToString();

@@ -39,6 +39,18 @@ namespace BLL
             return (count == 0) ? 1 : 0;
         }
 
+        public int checkNgay(bot_hocvien_infomation _bot_hv)
+        {
+            string sql1_ = "select ngayden from hocvien_info where hocvien_id='" + _bot_hv.hocvien_id + "'";
+            DateTime ngayden_ = DateTime.Parse(cn.GetValue(sql1_).ToString());
+            DateTime.Parse(ngayden_.ToShortDateString());
+            string sql2_ = "select ngayve from hocvien_info where hocvien_id='" + _bot_hv.hocvien_id + "'";
+            DateTime ngayfve_ = DateTime.Parse(cn.GetValue(sql2_).ToString());
+            DateTime.Parse(ngayfve_.ToShortDateString());
+            int count = (ngayfve_ > ngayden_) ? 1 : 0;
+            return (count > 0) ? 1 : 0;
+        }
+
         /*
          * Fuction Load Information
          * */
@@ -51,8 +63,8 @@ namespace BLL
             bot_hv.thedanh = dt.Rows[0][1].ToString();
             bot_hv.phone = dt.Rows[0][3].ToString();
             if (!dt.Rows[0][2].ToString().Equals(""))
-                bot_hv.namsinh = int.Parse(dt.Rows[0][2].ToString());
-            else bot_hv.namsinh = -1;
+                bot_hv.namsinh = dt.Rows[0][2].ToString();
+            else bot_hv.namsinh = "";
             bot_hv.vitri = dt.Rows[0][4].ToString();
             bot_hv.caniemphat = dt.Rows[0][5].ToString();
         }
@@ -66,8 +78,8 @@ namespace BLL
             bot_hv.thedanh = dt.Rows[0][1].ToString();
             bot_hv.phone = dt.Rows[0][3].ToString();
             if (!dt.Rows[0][2].ToString().Equals(""))
-                bot_hv.namsinh = int.Parse(dt.Rows[0][2].ToString());
-            else bot_hv.namsinh = -1;
+                bot_hv.namsinh =dt.Rows[0][2].ToString();
+            else bot_hv.namsinh = "";
             bot_hv.vitri = dt.Rows[0][4].ToString();
             bot_hv.caniemphat = dt.Rows[0][5].ToString();
         }
@@ -81,8 +93,8 @@ namespace BLL
             bot_hv.thedanh = dt.Rows[0][1].ToString();
             bot_hv.phone = dt.Rows[0][3].ToString();
             if (!dt.Rows[0][2].ToString().Equals(""))
-                bot_hv.namsinh = int.Parse(dt.Rows[0][2].ToString());
-            else bot_hv.namsinh = -1;
+                bot_hv.namsinh = dt.Rows[0][2].ToString();
+            else bot_hv.namsinh = "";
             bot_hv.vitri = dt.Rows[0][4].ToString();
             bot_hv.caniemphat = dt.Rows[0][5].ToString();
         }
@@ -94,14 +106,26 @@ namespace BLL
         }
         public DataTable loadAllInfo_HocVien()
         {
-            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info order by hocvien_id";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info order by thoigian,hocvien_id";
             return cn.GetAllValue(sql_);
+        }
+
+        public void UpdateViTriChoHocVienVe(bot_hocvien_infomation _bot_hv)
+        {
+            string sql_ = "update vitri_khu set status=true where vitri='" + _bot_hv.vitri + "'";
+            cn.Update(sql_);
         }
 
         public DataTable loadCbbKhu()
         {
             string sql_="select distinct khu_id from vitri_khu where status = true";
             return cn.GetAllValue(sql_);
+        }
+
+        public int loadSTTMax()
+        {
+            string sql_ = "select max(hocvien_id) from hocvien_info";
+            return int.Parse(cn.GetValue(sql_).ToString());
         }
 
         public DataTable loadCbbViTri(string khu_id_)
@@ -121,42 +145,69 @@ namespace BLL
          */
          public string AddHocVien(bot_hocvien_infomation _bot_hv)
         {
-            string sql_ = "insert into hocvien_info (hocvien_id,phapdanh,thedanh, phone, nguoithan_phone, cmnd, cmnd_note, hocvien_diachi, namsinh, vitri, ngayden, ngayve, ghichu, caniemphat, khu_id) values ('"+_bot_hv.hocvien_id+"','"+_bot_hv.phapdanh+"','"+_bot_hv.thedanh+"','"+_bot_hv.phone+"','"+_bot_hv.nguoithan_phone+"','"+_bot_hv.cmnd+"','"+_bot_hv.cmnd_note+"','"+_bot_hv.hocvien_diachi+"','"+_bot_hv.namsinh+"','"+_bot_hv.vitri+"','"+_bot_hv.ngayden+"','"+_bot_hv.ngayve+"','"+_bot_hv.ghichu+"','"+_bot_hv.caniemphat+"','"+_bot_hv.khu_id+"')";
+            string sql_ = "insert into hocvien_info (hocvien_id,phapdanh,thedanh, phone, nguoithan_phone, cmnd, cmnd_note, hocvien_diachi, namsinh, vitri, ngayden, ngayve, ghichu, caniemphat, khu_id,thoigian) values ('"+_bot_hv.hocvien_id+"','"+_bot_hv.phapdanh+"','"+_bot_hv.thedanh+"','"+_bot_hv.phone+"','"+_bot_hv.nguoithan_phone+"','"+_bot_hv.cmnd+"','"+_bot_hv.cmnd_note+"','"+_bot_hv.hocvien_diachi+"','"+_bot_hv.namsinh+"','"+_bot_hv.vitri+"','"+_bot_hv.ngayden+"','"+_bot_hv.ngayve+"','"+_bot_hv.ghichu+"','"+_bot_hv.caniemphat+"','"+_bot_hv.khu_id+"','"+_bot_hv.thoigian+"')";
             cn.Update(sql_);
             sql_ = "update vitri_khu set status=false where vitri='" + _bot_hv.vitri + "'";
             cn.Update(sql_);
-            return "Thêm thông tin học viên thành công!";
+            return "Thêm thông tin Phật Tử thành công!";
         }
 
         public string UpdateHocVienAll(bot_hocvien_infomation _bot_hv, string oldViTri)
         {
-            string sql_ = "update hocvien_info set phapdanh='"+_bot_hv.phapdanh+ "',thedanh='" + _bot_hv.thedanh + "',phone='" + _bot_hv.phone + "',nguoithan_phone='" + _bot_hv.nguoithan_phone + "',cmnd='" + _bot_hv.cmnd + "',cmnd_note='" + _bot_hv.cmnd_note + "',hocvien_diachi='" + _bot_hv.hocvien_diachi + "',namsinh='" + _bot_hv.namsinh + "',vitri='" + _bot_hv.vitri + "',ngayden='" + _bot_hv.ngayden + "',ngayve='" + _bot_hv.ngayve + "',ghichu='" + _bot_hv.ghichu + "',caniemphat='" + _bot_hv.caniemphat + "', khu_id='"+_bot_hv.khu_id+"'where hocvien_id='" + _bot_hv.hocvien_id+"'";
-            cn.Update(sql_);
+            string sql_ = "select thoigian from hocvien_info where hocvien_id='" + _bot_hv.hocvien_id + "'";
+            string text = cn.GetValue(sql_).ToString();
+            if (text != "")
+            {
+                sql_ = "update hocvien_info set phapdanh='" + _bot_hv.phapdanh + "',thedanh='" + _bot_hv.thedanh + "',phone='" + _bot_hv.phone + "',nguoithan_phone='" + _bot_hv.nguoithan_phone + "',cmnd='" + _bot_hv.cmnd + "',cmnd_note='" + _bot_hv.cmnd_note + "',hocvien_diachi='" + _bot_hv.hocvien_diachi + "',namsinh='" + _bot_hv.namsinh + "',vitri='" + _bot_hv.vitri + "',ngayden='" + _bot_hv.ngayden + "',ngayve='" + _bot_hv.ngayve + "',ghichu='" + _bot_hv.ghichu + "',caniemphat='" + _bot_hv.caniemphat + "', khu_id='" + _bot_hv.khu_id + "'where hocvien_id='" + _bot_hv.hocvien_id + "'";
+                cn.Update(sql_);
+            }
+            else
+            {
+                sql_ = "update hocvien_info set phapdanh='" + _bot_hv.phapdanh + "',thedanh='" + _bot_hv.thedanh + "',phone='" + _bot_hv.phone + "',nguoithan_phone='" + _bot_hv.nguoithan_phone + "',cmnd='" + _bot_hv.cmnd + "',cmnd_note='" + _bot_hv.cmnd_note + "',hocvien_diachi='" + _bot_hv.hocvien_diachi + "',namsinh='" + _bot_hv.namsinh + "',vitri='" + _bot_hv.vitri + "',ngayden='" + _bot_hv.ngayden + "',ngayve='" + _bot_hv.ngayve + "',ghichu='" + _bot_hv.ghichu + "',caniemphat='" + _bot_hv.caniemphat + "', khu_id='" + _bot_hv.khu_id + "',thoigian='"+DateTime.Now+"'where hocvien_id='" + _bot_hv.hocvien_id + "'";
+                cn.Update(sql_);
+            }
+            
             sql_ = "update vitri_khu set status=true where vitri='" + oldViTri + "'";
             cn.Update(sql_);
             sql_ = "update vitri_khu set status=false where vitri='" + _bot_hv.vitri + "'";
             cn.Update(sql_);
             
-            return "Chỉnh sửa thông tin học viên thành công!";
+            
+            return "Chỉnh sửa thông tin Phật Tử thành công!";
         }
+
+        
 
         public string UpdateHocVien_(bot_hocvien_infomation _bot_hv, string oldViTri)
         {
-            string sql_ = "update hocvien_info set phapdanh='" + _bot_hv.phapdanh + "',thedanh='" + _bot_hv.thedanh + "',phone='" + _bot_hv.phone + "',nguoithan_phone='" + _bot_hv.nguoithan_phone + "',cmnd='" + _bot_hv.cmnd + "',cmnd_note='" + _bot_hv.cmnd_note + "',hocvien_diachi='" + _bot_hv.hocvien_diachi + "',namsinh='" + _bot_hv.namsinh + "',ngayden='" + _bot_hv.ngayden + "',ngayve='" + _bot_hv.ngayve + "',ghichu='" + _bot_hv.ghichu + "',caniemphat='" + _bot_hv.caniemphat + "'where hocvien_id='" + _bot_hv.hocvien_id + "'";
-            cn.Update(sql_);
+            string sql_ = "select thoigian from hocvien_info where hocvien_id='" + _bot_hv.hocvien_id + "'";
+            string text = cn.GetValue(sql_).ToString();
+            if (text != "")
+            {
+                sql_ = "update hocvien_info set phapdanh='" + _bot_hv.phapdanh + "',thedanh='" + _bot_hv.thedanh + "',phone='" + _bot_hv.phone + "',nguoithan_phone='" + _bot_hv.nguoithan_phone + "',cmnd='" + _bot_hv.cmnd + "',cmnd_note='" + _bot_hv.cmnd_note + "',hocvien_diachi='" + _bot_hv.hocvien_diachi + "',namsinh='" + _bot_hv.namsinh + "',ngayden='" + _bot_hv.ngayden + "',ngayve='" + _bot_hv.ngayve + "',ghichu='" + _bot_hv.ghichu + "',caniemphat='" + _bot_hv.caniemphat + "'where hocvien_id='" + _bot_hv.hocvien_id + "'";
+                cn.Update(sql_);
+            }
+            else
+            {
+                sql_ = "update hocvien_info set phapdanh='" + _bot_hv.phapdanh + "',thedanh='" + _bot_hv.thedanh + "',phone='" + _bot_hv.phone + "',nguoithan_phone='" + _bot_hv.nguoithan_phone + "',cmnd='" + _bot_hv.cmnd + "',cmnd_note='" + _bot_hv.cmnd_note + "',hocvien_diachi='" + _bot_hv.hocvien_diachi + "',namsinh='" + _bot_hv.namsinh + "',ngayden='" + _bot_hv.ngayden + "',ngayve='" + _bot_hv.ngayve + "',ghichu='" + _bot_hv.ghichu + "',caniemphat='" + _bot_hv.caniemphat + "',thoigian='"+DateTime.Now+"'where hocvien_id='" + _bot_hv.hocvien_id + "'";
+                cn.Update(sql_);
+            }
             sql_ = "update vitri_khu set status=true where vitri='" + oldViTri + "'";
             cn.Update(sql_);
             sql_ = "update vitri_khu set status=false where vitri='" + _bot_hv.vitri + "'";
             cn.Update(sql_);
 
-            return "Chỉnh sửa thông tin học viên thành công!";
+            return "Chỉnh sửa thông tin Phật Tử thành công!";
         }
 
         public string DeleteHocVien(int hocvien_id)
         {
             string sql_ = "delete from hocvien_info where hocvien_id='"+hocvien_id+"' ";
+            string sql1_ = "update vitri_khu set status=true where vitri in (select vitri from hocvien_info where hocvien_id='"+hocvien_id+"')";
+            cn.Update(sql1_);
             cn.Update(sql_);
-            return "Xóa thông tin học viên thành công!";
+            
+            return "Xóa thông tin Phật Tử thành công!";
         }
     }
 }

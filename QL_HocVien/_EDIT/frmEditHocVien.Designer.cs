@@ -435,7 +435,7 @@
             this.MinimizeBox = false;
             this.Name = "frmEditHocVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chỉnh Sửa Thông Tin Học Viên";
+            this.Text = "Chỉnh Sửa Thông Tin Phật Tử";
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.btnHuy, 0);
             this.Controls.SetChildIndex(this.btnLuu, 0);

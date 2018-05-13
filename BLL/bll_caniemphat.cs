@@ -42,7 +42,7 @@ namespace BLL
 
         public string DeleteCaNiem(bot_caniemphat _bot_ca)
         {
-            string sql_ = "delete from ca_niem_phat where ca_niem'" + _bot_ca.ca_niem + "'";
+            string sql_ = "delete from ca_niem_phat where ca_niem='" + _bot_ca.ca_niem + "'";
             cn.Update(sql_);
             return "Xóa Ca niệm phật thành công!";
         }

@@ -29,6 +29,8 @@ namespace QL_HocVien._EDIT
 
             cbbKhu.DisplayMember = "khu_id";
             cbbKhu.DataSource = _bll_hv.loadCbbKhu();
+            cbbKhu.DisplayMember = "khu_id";
+            cbbCaNiemPhat.DisplayMember = "ca_niem";
             cbbCaNiemPhat.DataSource = _bll_hv.loadCbbCaNiem();
             cbbCaNiemPhat.DisplayMember = "ca_niem";
 
@@ -56,7 +58,8 @@ namespace QL_HocVien._EDIT
             txtSTT.Select();
             cbbKhu.DisplayMember = "khu_id";
             cbbKhu.DataSource = _bll_hv.loadCbbKhu();
-            
+            cbbKhu.DisplayMember = "khu_id";
+            cbbCaNiemPhat.DisplayMember = "ca_niem";
             cbbCaNiemPhat.DataSource = _bll_hv.loadCbbCaNiem();
             cbbCaNiemPhat.DisplayMember = "ca_niem";
             oldVitri = cbbViTri.Text;
@@ -83,7 +86,7 @@ namespace QL_HocVien._EDIT
                         _bot_hv.thedanh = txtTheDanh.Text;
                         _bot_hv.phone = txtDienThoai.Text;
                         _bot_hv.nguoithan_phone = txtDTNguoiThan.Text;
-                        _bot_hv.namsinh = int.Parse(txtNamSinh.Text);
+                        _bot_hv.namsinh =txtNamSinh.Text;
                         _bot_hv.hocvien_diachi = txtDiaChi.Text;
                         _bot_hv.cmnd_note = txtLoaiCMND.Text;
                         _bot_hv.cmnd = txtCMND.Text;
@@ -100,11 +103,19 @@ namespace QL_HocVien._EDIT
                     if (dr == DialogResult.Yes)
                     {
                         MessageBox.Show(_bll_hv.UpdateHocVienAll(_bot_hv, oldVitri), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (_bll_hv.checkNgay(_bot_hv).Equals(1))
+                        {
+                            _bll_hv.UpdateViTriChoHocVienVe(_bot_hv);
+                        }
                         reloadInitForm();
                     }
                     else if (dr == DialogResult.No)
                     {
                         MessageBox.Show(_bll_hv.UpdateHocVien_(_bot_hv, oldVitri), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (_bll_hv.checkNgay(_bot_hv).Equals(1))
+                        {
+                            _bll_hv.UpdateViTriChoHocVienVe(_bot_hv);
+                        }
                         reloadInitForm();
                     }
                         
@@ -121,7 +132,7 @@ namespace QL_HocVien._EDIT
         private void btnHuy_Click(object sender, EventArgs e)
         {
             DialogResult dr = new DialogResult();
-            dr = MessageBox.Show("Dừng chỉnh sửa thông tin học viên?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            dr = MessageBox.Show("Dừng chỉnh sửa thông tin Phật Tử?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
                 this.Close();
         }

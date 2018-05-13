@@ -26,6 +26,7 @@ namespace QL_HocVien._QUANLY
         private void initForm()
         {
             txtCaNiemPhat.Select();
+            txtCaNiemPhat.Text = "";
             dgvCaNiemPhat.DataSource = _bll_ca.loadCaNiemPhat();
             btnThem.Enabled = false;
         }

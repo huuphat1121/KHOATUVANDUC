@@ -14,49 +14,49 @@ namespace BLL
 
         public DataTable searchPhapDanh(string phapdanh_)
         {
-            string sql_ = "select * from hocvien_info where phapdanh=N'" + phapdanh_ + "'";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info where phapdanh=N'" + phapdanh_ + "' order by thoigian,hocvien_id";
             return cn.GetAllValue(sql_);
         }
 
         public DataTable searchTheDanh(string thedanh_)
         {
-            string sql_ = "select * from hocvien_info where thedanh='" + thedanh_ + "'";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info where thedanh='" + thedanh_ + "' order by thoigian,hocvien_id";
             return cn.GetAllValue(sql_);
         }
 
         public DataTable searchCMND(string CMND_)
         {
-            string sql_ = "select * from hocvien_info where cmnd='" + CMND_ + "'";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info where cmnd='" + CMND_ + "' order by thoigian,hocvien_id";
             return cn.GetAllValue(sql_);
         }
 
         public DataTable searchKhu(string khu_)
         {
-            string sql_ = "select * from hocvien_info where khu_id='" + khu_ + "'";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info where khu_id='" + khu_ + "' order by thoigian,hocvien_id";
             return cn.GetAllValue(sql_);
         }
 
         public DataTable searchCaNiem(string caniem_)
         {
-            string sql_ = "select * from hocvien_info where caniemphat='" + caniem_ + "'";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info where caniemphat='" + caniem_ + "' order by thoigian,hocvien_id";
             return cn.GetAllValue(sql_);
         }
 
-        public DataTable searchNgayDen(DateTime ngayden_)
+        public DataTable searchNgayDen(DateTime ngayden_, DateTime ngaydento_)
         {
-            string sql_ = "select * from hocvien_info where ngayden='" + ngayden_ + "'";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info where ngayden between '" + ngayden_ + "' and '" +ngaydento_ + "' order by thoigian,hocvien_id";
             return cn.GetAllValue(sql_);
         }
 
-        public DataTable searchNgayVe(DateTime ngayve_)
+        public DataTable searchNgayVe(DateTime ngayve_, DateTime ngaydento_)
         {
-            string sql_ = "select * from hocvien_info where ngayve='" + ngayve_ + "'";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info where ngayve between '" + ngayve_ + "' and '" + ngaydento_ + "' order by thoigian,hocvien_id";
             return cn.GetAllValue(sql_);
         }
 
         public DataTable searchSTT(int stt_)
         {
-            string sql_ = "select * from hocvien_info where hocvien_id='" + stt_ + "'";
+            string sql_ = "select hocvien_id,phapdanh,thedanh,namsinh,phone,nguoithan_phone,cmnd,cmnd_note,hocvien_diachi,khu_id,vitri,caniemphat,ngayden,ngayve,ghichu from hocvien_info where hocvien_id='" + stt_ + "' order by thoigian,hocvien_id";
             return cn.GetAllValue(sql_);
         }
 

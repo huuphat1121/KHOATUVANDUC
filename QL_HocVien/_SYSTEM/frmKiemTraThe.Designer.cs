@@ -97,7 +97,7 @@
             this.groupBox1.Size = new System.Drawing.Size(679, 162);
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông Tin Học Viên";
+            this.groupBox1.Text = "Thông Tin Phật Tử";
             // 
             // lblViTri
             // 
@@ -303,7 +303,7 @@
             this.MinimizeBox = false;
             this.Name = "frmKiemTraThe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kiểm Tra Thẻ Học Viên";
+            this.Text = "Kiểm Tra Thẻ Phật Tử";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmKiemTraThe_KeyDown);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label5, 0);

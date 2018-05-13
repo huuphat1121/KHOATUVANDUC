@@ -37,7 +37,7 @@
             // txtCaNiemPhat
             // 
             this.txtCaNiemPhat.Location = new System.Drawing.Point(95, 15);
-            this.txtCaNiemPhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCaNiemPhat.Margin = new System.Windows.Forms.Padding(4);
             this.txtCaNiemPhat.Name = "txtCaNiemPhat";
             this.txtCaNiemPhat.Size = new System.Drawing.Size(181, 22);
             this.txtCaNiemPhat.TabIndex = 0;
@@ -45,7 +45,7 @@
             // btnLuu
             // 
             this.btnLuu.Location = new System.Drawing.Point(69, 74);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 28);
             this.btnLuu.TabIndex = 1;
@@ -56,7 +56,7 @@
             // btnHuy
             // 
             this.btnHuy.Location = new System.Drawing.Point(200, 74);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(100, 28);
             this.btnHuy.TabIndex = 1;
@@ -73,7 +73,7 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.txtCaNiemPhat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEditCaNiemPhat";

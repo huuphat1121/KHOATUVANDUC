@@ -26,6 +26,7 @@ namespace QL_HocVien._SYSTEM
             btnXuatAnh.Enabled = false;
             btnXuatAnhCu.Enabled = false;
             txtSTT.Select();
+           
         }
 
         private void InThe__Load(object sender, EventArgs e)
@@ -45,7 +46,22 @@ namespace QL_HocVien._SYSTEM
             rect.Size = ctrlSize;
             g.DrawImage(bitmap, rect);
             pictureBox1.Image = result;
-            System.Drawing.Imaging.ImageFormat format = System.Drawing.Imaging.ImageFormat.Icon;
+            System.Drawing.Imaging.ImageFormat format = System.Drawing.Imaging.ImageFormat.Png;
+            pictureBox1.Image.Save(fileName, format);
+        }
+
+        void ControlToBitmap1(Control ctrol, string fileName)
+        {
+            Size ctrlSize = ctrol.Size;
+            Rectangle rect = new Rectangle(new Point(0, 0), ctrlSize);
+            Bitmap bitmap = new Bitmap(ctrlSize.Width, ctrlSize.Height);
+            ctrol.DrawToBitmap(bitmap, rect);
+            Bitmap result = new Bitmap(ctrlSize.Width, ctrlSize.Height);
+            Graphics g = Graphics.FromImage(result);
+            rect.Size = ctrlSize;
+            g.DrawImage(bitmap, rect);
+            pictureBox1.Image = result;
+            System.Drawing.Imaging.ImageFormat format = System.Drawing.Imaging.ImageFormat.Png;
             pictureBox1.Image.Save(fileName, format);
         }
         private void button1_Click(object sender, EventArgs e)
@@ -71,7 +87,7 @@ namespace QL_HocVien._SYSTEM
             bot_hv.hocvien_id = int.Parse(txtSTT.Text);
             if (bll_hv.checkID(bot_hv) == 1)
             {
-                MessageBox.Show("Học viên chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Phật Tử chưa đăng ký trong danh sách, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -106,6 +122,8 @@ namespace QL_HocVien._SYSTEM
                         lblNgaySinh1.Text = bot_hv.namsinh.ToString();
                     else lblNgaySinh1.Text = "";
                     createBarcode(txtSTT.Text);
+                    label2.Text = txtSTT.Text;
+                    label3.Text = txtSTT.Text;
                     //barCodeControl1.CreateGraphics();
                     
 
@@ -131,14 +149,18 @@ namespace QL_HocVien._SYSTEM
             barcode.CodeToEncode = stt_;
             barcode.X = 1;
             barcode.Y = 30;
-            barcode.BarCodeWidth = 100;
-            barcode.BarCodeHeight = 53;
-            barcode.DisplayText = true;
+            barcode.BarCodeWidth = 225;
+            barcode.BarCodeHeight = 81;
+            barcode.DisplayText = false;
             barcode.DisplayStartStop = true;
             barcode.BarcodeUnit = KeepAutomation.Barcode.BarcodeUnit.Pixel;
             barcode.Orientation = KeepAutomation.Barcode.Orientation.Degree0;
-            barcode.DPI = 400;
-            fileName = stt_ + ".ico";
+            barcode.DPI = 300;
+            if (!Directory.Exists("Barcode images"))
+            {
+                Directory.CreateDirectory("Barcode images");
+            }
+            fileName = "Barcode images/"+stt_ + ".png";
             barcode.ImageFormat = System.Drawing.Imaging.ImageFormat.Png;
             barcode.generateBarcodeToImageFile(fileName);
             picResult.Image = Image.FromFile(fileName);
@@ -151,7 +173,7 @@ namespace QL_HocVien._SYSTEM
             {
                 Directory.CreateDirectory("D://The Chua Van Duc");
             }
-            string fileName= "D://The Chua Van Duc/"+txtSTT.Text + ".ico";
+            string fileName= "D://The Chua Van Duc/"+txtSTT.Text + ".png";
             if (File.Exists(fileName))
             {
                 File.Delete(fileName);
@@ -288,6 +310,11 @@ namespace QL_HocVien._SYSTEM
                             picResult.Image.Dispose();
                             picResult.Image = null;
                         }
+                        if (picResult1.Image != null)
+                        {
+                            picResult1.Image.Dispose();
+                            picResult1.Image = null;
+                        }
                         lblPhapDanh.Text = dt.Rows[i][0].ToString();
                         lblTheDanh.Text = dt.Rows[i][1].ToString();
                         lblNgaySinh.Text = dt.Rows[i][2].ToString();
@@ -295,8 +322,10 @@ namespace QL_HocVien._SYSTEM
                         lblCaNiemPhat.Text = dt.Rows[i][4].ToString();
                         stt_ = dt.Rows[i][5].ToString();
                         createBarcode(stt_);
+                        label3.Text = stt_;
+                        label2.Text = stt_;
                         //MessageBox.Show(stt_);
-                        fileName = "D://The Chua Van Duc/" + stt_ + ".ico";
+                        fileName = "D://The Chua Van Duc/" + stt_ + ".png";
                         if (File.Exists(fileName))
                         {
                             File.Delete(fileName);
@@ -326,7 +355,7 @@ namespace QL_HocVien._SYSTEM
             {
                 Directory.CreateDirectory("D://The Chua Van Duc/The Cu");
             }
-            string fileName = "D://The Chua Van Duc/The Cu/" + txtSTT.Text + ".ico";
+            string fileName = "D://The Chua Van Duc/The Cu/" + txtSTT.Text + ".png";
             if (File.Exists(fileName))
             {
                 File.Delete(fileName);
@@ -336,6 +365,80 @@ namespace QL_HocVien._SYSTEM
             btnXuatAnh.Enabled = false;
             btnXuatAnhCu.Enabled = false;
             txtSTT.Text = "";
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string fileName;
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Xuất tất cả các thẻ hiện có trong danh sách?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+
+                DataTable dt = new DataTable();
+                dt = bll_hv.loadInfoHocVien_PrintAll();
+                int rows = dt.Rows.Count;
+                int count_ = 0;
+                //MessageBox.Show(rows.ToString());
+                for (int i = 0; i < rows; i += 1)
+                {
+                    try
+                    {
+                        if (pictureBox1.Image != null)
+                        {
+                            pictureBox1.Image.Dispose();
+                            pictureBox1.Image = null;
+                        }
+                        if (picResult1.Image != null)
+                        {
+                            picResult1.Image.Dispose();
+                            picResult1.Image = null;
+                        }
+                        if (picResult.Image != null)
+                        {
+                            picResult.Image.Dispose();
+                            picResult.Image = null;
+                        }
+                        lblPhapDanh1.Text = dt.Rows[i][0].ToString();
+                        lblTheDanh1.Text = dt.Rows[i][1].ToString();
+                        lblNgaySinh1.Text = dt.Rows[i][2].ToString();
+                        stt_ = dt.Rows[i][5].ToString();
+                        createBarcode(stt_);
+                        label3.Text = stt_;
+                        label2.Text = stt_;
+                        //MessageBox.Show(stt_);
+                        fileName = "D://The Chua Van Duc/The Cu/" + stt_ + ".png";
+                        if (File.Exists(fileName))
+                        {
+                            File.Delete(fileName);
+                        }
+                        ControlToBitmap(panel2, fileName);
+                        count_++;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                if (count_ == rows)
+                {
+                    MessageBox.Show("In tất cả các thẻ thành công! Vui lòng kiểm tra file theo đường dấn (D://The Chua Van Duc/The Cu)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("In không thành công! Vui lòng kiểm tra file theo đường dấn (D://The Chua Van Duc/The Cu) và thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void lblPhapDanh1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

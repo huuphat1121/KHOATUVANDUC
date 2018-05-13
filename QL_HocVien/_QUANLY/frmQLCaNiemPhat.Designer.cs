@@ -56,10 +56,11 @@
             this.ca_id,
             this.so_nguoi,
             this.ca_niem});
-            this.dgvCaNiemPhat.Location = new System.Drawing.Point(267, 217);
+            this.dgvCaNiemPhat.Location = new System.Drawing.Point(356, 267);
+            this.dgvCaNiemPhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCaNiemPhat.Name = "dgvCaNiemPhat";
             this.dgvCaNiemPhat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCaNiemPhat.Size = new System.Drawing.Size(245, 157);
+            this.dgvCaNiemPhat.Size = new System.Drawing.Size(327, 193);
             this.dgvCaNiemPhat.TabIndex = 104;
             this.dgvCaNiemPhat.DoubleClick += new System.EventHandler(this.dgvCaNiemPhat_DoubleClick);
             // 
@@ -95,9 +96,11 @@
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 208);
+            this.groupBox1.Location = new System.Drawing.Point(16, 256);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(249, 166);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(332, 204);
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -105,18 +108,20 @@
             // txtCaNiemPhat
             // 
             this.txtCaNiemPhat.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCaNiemPhat.Location = new System.Drawing.Point(111, 25);
+            this.txtCaNiemPhat.Location = new System.Drawing.Point(148, 31);
+            this.txtCaNiemPhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCaNiemPhat.Name = "txtCaNiemPhat";
-            this.txtCaNiemPhat.Size = new System.Drawing.Size(111, 23);
+            this.txtCaNiemPhat.Size = new System.Drawing.Size(147, 27);
             this.txtCaNiemPhat.TabIndex = 0;
             this.txtCaNiemPhat.TextChanged += new System.EventHandler(this.txtCaNiemPhat_TextChanged);
             // 
             // btnQuayLai
             // 
             this.btnQuayLai.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuayLai.Location = new System.Drawing.Point(167, 132);
+            this.btnQuayLai.Location = new System.Drawing.Point(223, 162);
+            this.btnQuayLai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(75, 28);
+            this.btnQuayLai.Size = new System.Drawing.Size(100, 34);
             this.btnQuayLai.TabIndex = 3;
             this.btnQuayLai.Text = "Quay Lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
@@ -125,9 +130,10 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(86, 132);
+            this.btnXoa.Location = new System.Drawing.Point(115, 162);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 28);
+            this.btnXoa.Size = new System.Drawing.Size(100, 34);
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -136,9 +142,10 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(5, 132);
+            this.btnThem.Location = new System.Drawing.Point(7, 162);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 28);
+            this.btnThem.Size = new System.Drawing.Size(100, 34);
             this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -147,24 +154,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 28);
+            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 17);
+            this.label1.Size = new System.Drawing.Size(112, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ca niệm phật:";
             // 
             // frmQLCaNiemPhat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 386);
+            this.ClientSize = new System.Drawing.Size(699, 475);
             this.Controls.Add(this.dgvCaNiemPhat);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQLCaNiemPhat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmQLCaNiemPhat";
+            this.Text = "Quản Lý Ca Niệm Phật";
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.dgvCaNiemPhat, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaNiemPhat)).EndInit();
